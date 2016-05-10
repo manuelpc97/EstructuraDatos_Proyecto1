@@ -18,7 +18,7 @@ public class Cola {
         size = 1;
     }
 
-    public int getHead() {
+    public Object getHead() {
         return head.getValue();
     }
 
@@ -34,14 +34,14 @@ public class Cola {
         size++;
     }
 
-    public int DeQueue() {
+    public Object DeQueue() {
         ListNode retorno = head;
         head = head.getNext();
         size--;
         return retorno.getValue();
     }
 
-    public int peek() {
+    public Object peek() {
         return head.getValue();
     }
 

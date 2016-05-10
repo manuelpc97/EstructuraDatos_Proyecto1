@@ -52,7 +52,7 @@ public class Lista {
         return size;
     }
 
-    public int find(int value) {
+    public int find(Object value) {
         ListNode current = head;
 
         for (int i = 0; i < size; i++) {
@@ -64,7 +64,7 @@ public class Lista {
         return -1;
     }
 
-    public int get(int position) {
+    public Object get(int position) {
         ListNode current = head;
 
         for (int i = 0; i < size; i++) {
@@ -77,7 +77,7 @@ public class Lista {
         return -1;
     }
 
-    public int first() {
+    public Object first() {
         return head.getValue();
     }
 

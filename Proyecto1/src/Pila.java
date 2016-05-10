@@ -40,14 +40,14 @@ public class Pila {
         }
     }
 
-    public int pop() {
+    public Object pop() {
         ListNode last = top;
         top = top.getPrevious();
         top.setNext(null);
         return last.getValue();
     }
     
-    public int peek(){
+    public Object peek(){
         return top.getValue();
     }
 }

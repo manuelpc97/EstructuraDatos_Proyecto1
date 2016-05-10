@@ -9,17 +9,17 @@
  * @author manuel
  */
 public class ListNode {
-    int value;
+    Object value;
     ListNode next;
     ListNode previous;
     
-    public ListNode(int value){
+    public ListNode(Object value){
         this.value = value;
         next = null;
         previous = null;
     }
     
-    public int getValue(){
+    public Object getValue(){
         return value;
     }
     
