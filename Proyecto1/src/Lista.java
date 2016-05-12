@@ -9,10 +9,15 @@
  * @author manuel
  */
 public class Lista {
+
     ListNode head;
     int size;
 
-    public Lista(int value) {
+    public Lista() {
+        size = 0;
+    }
+
+    public Lista(Object value) {
         head = new ListNode(value);
         size = 1;
     }
@@ -25,8 +30,9 @@ public class Lista {
         head = value;
     }
 
-    public void insert(int value, int position) {
+    public void insert(Object value, int position) {
         if (position >= 0 && position < size) {
+
             ListNode current = head;
             if (position == 0) {
                 this.setHead(new ListNode(value));
@@ -64,6 +70,19 @@ public class Lista {
         return -1;
     }
 
+    public ListNode at(int position) {
+        ListNode current = head;
+
+        for (int i = 0; i < size; i++) {
+            if (i == position) {
+                return current;
+            }
+
+            current = current.getNext();
+        }
+        return null;
+    }
+
     public Object get(int position) {
         ListNode current = head;
 
@@ -91,8 +110,10 @@ public class Lista {
         size = size + nueva.getSize();
     }
 
-    public void push(int value) {
-        if (head.hasNext() == true) {
+    public void push(Object value) {
+        if (size == 0) {
+            this.setHead(new ListNode(value));
+        } else if (head.hasNext() == true) {
             ListNode current = head;
 
             while (current.hasNext()) {
@@ -110,28 +131,20 @@ public class Lista {
         if (position >= 0 && position < size) {
             if (position == 0) {
                 this.setHead(head.getNext());
+            } else if (position == size - 1) {
+                this.at(size - 2).setNext(null);
             } else {
                 ListNode current = head;
+
                 for (int i = 0; i < position - 1; i++) {
                     current = current.getNext();
                 }
 
-                if (current.getNext().hasNext()) {
-                    ListNode second = current.getNext().getNext();
-                    current.setNext(second);
-                } else {
-                    current.setNext(null);
-                }
+                ListNode second = current.getNext().getNext();
+                current.setNext(second);
+
             }
             size--;
-        }
-    }
-
-    public void showList() {
-        ListNode current = head;
-        for (int i = 0; i < size; i++) {
-            System.out.println(current.getValue());
-            current = current.getNext();
         }
     }
 }

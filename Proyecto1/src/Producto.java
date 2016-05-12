@@ -12,7 +12,7 @@ public class Producto {
     String nombre;
     String descripcion;
     int tiempo;
-    Pila materiales;
+    Lista materiales;
 
     public Producto() {
     }
@@ -47,7 +47,7 @@ public class Producto {
         this.tiempo = tiempo;
     }
 
-    public Pila getMateriales() {
+    public Lista getMateriales() {
         return materiales;
     }
 

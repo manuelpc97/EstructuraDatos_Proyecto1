@@ -13,6 +13,7 @@ public class Pila {
     int size;
 
     public Pila() {
+        top = null;
         size = 0;
     }
 

@@ -13,7 +13,12 @@ public class Cola {
     ListNode last;
     int size;
 
-    Cola(int value) {
+    public Cola() {
+        head = null;
+    }
+
+    
+    Cola(Object value) {
         head = new ListNode(value);
         size = 1;
     }
@@ -22,14 +27,19 @@ public class Cola {
         return head.getValue();
     }
 
-    public void queue(int number) {
-        ListNode nuevo = new ListNode(number);
-        if(head.hasNext() == false){
-            head.setNext(nuevo);
+    public void queue(Object object) {
+        ListNode nuevo = new ListNode(object);
+        if(head == null){
+            head = nuevo;
             last = nuevo;
         }else{
-            last.setNext(nuevo);
-            last = nuevo;
+            if(head.hasNext() == false){
+                head.setNext(nuevo);
+                last = nuevo;
+            }else{
+                last.setNext(nuevo);
+                last = nuevo;
+            }
         }
         size++;
     }
