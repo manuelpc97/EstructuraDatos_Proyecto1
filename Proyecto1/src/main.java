@@ -2,7 +2,6 @@
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 
-
 /**
  *
  * @author manuel
@@ -26,9 +25,6 @@ public class main extends javax.swing.JFrame {
     private void initComponents() {
 
         jd_login = new javax.swing.JDialog();
-        jLabel1 = new javax.swing.JLabel();
-        tf_codigo = new javax.swing.JTextField();
-        btn_login = new javax.swing.JButton();
         btn_empleado = new javax.swing.JButton();
         btn_material = new javax.swing.JButton();
         btn_producto = new javax.swing.JButton();
@@ -78,7 +74,7 @@ public class main extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
         tf_nombreM = new javax.swing.JTextField();
         tf_descripcionM = new javax.swing.JTextField();
-        tf_marcaE = new javax.swing.JTextField();
+        tf_marcaM = new javax.swing.JTextField();
         tf_serieM = new javax.swing.JTextField();
         jp_editar1 = new javax.swing.JPanel();
         btn_modificarM = new javax.swing.JButton();
@@ -141,24 +137,8 @@ public class main extends javax.swing.JFrame {
         cb_productos = new javax.swing.JComboBox<String>();
         jLabel34 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        btn_administracion = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        MenuAdm = new javax.swing.JMenuItem();
-
-        jd_login.addWindowListener(new java.awt.event.WindowAdapter() {
-            public void windowActivated(java.awt.event.WindowEvent evt) {
-                jd_loginWindowActivated(evt);
-            }
-        });
-
-        jLabel1.setText("Ingrese Codigo de Administrador");
-
-        btn_login.setText("ok");
-        btn_login.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btn_loginMouseClicked(evt);
-            }
-        });
 
         btn_empleado.setText("Empleado");
         btn_empleado.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -181,7 +161,7 @@ public class main extends javax.swing.JFrame {
             }
         });
 
-        jl_opciones.setText("Opciones");
+        jl_opciones.setText("Elementos a Gestionar");
 
         javax.swing.GroupLayout jd_loginLayout = new javax.swing.GroupLayout(jd_login.getContentPane());
         jd_login.getContentPane().setLayout(jd_loginLayout);
@@ -190,45 +170,28 @@ public class main extends javax.swing.JFrame {
             .addGroup(jd_loginLayout.createSequentialGroup()
                 .addGroup(jd_loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jd_loginLayout.createSequentialGroup()
-                        .addGap(272, 272, 272)
-                        .addGroup(jd_loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btn_material)
-                            .addGroup(jd_loginLayout.createSequentialGroup()
-                                .addGap(7, 7, 7)
-                                .addComponent(btn_login))))
+                        .addGap(221, 221, 221)
+                        .addComponent(jl_opciones, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jd_loginLayout.createSequentialGroup()
-                        .addGap(90, 90, 90)
-                        .addComponent(btn_empleado)
-                        .addGap(264, 264, 264)
-                        .addComponent(btn_producto))
-                    .addGroup(jd_loginLayout.createSequentialGroup()
-                        .addGap(211, 211, 211)
-                        .addGroup(jd_loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(tf_codigo, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(124, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_loginLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jl_opciones, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(177, 177, 177)
+                        .addGroup(jd_loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btn_empleado, javax.swing.GroupLayout.DEFAULT_SIZE, 244, Short.MAX_VALUE)
+                            .addComponent(btn_material, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btn_producto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addContainerGap(216, Short.MAX_VALUE))
         );
         jd_loginLayout.setVerticalGroup(
             jd_loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jd_loginLayout.createSequentialGroup()
-                .addGap(62, 62, 62)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(tf_codigo, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
-                .addComponent(btn_login)
-                .addGap(47, 47, 47)
+                .addGap(36, 36, 36)
                 .addComponent(jl_opciones)
-                .addGap(50, 50, 50)
-                .addGroup(jd_loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_empleado)
-                    .addComponent(btn_material)
-                    .addComponent(btn_producto))
-                .addContainerGap(142, Short.MAX_VALUE))
+                .addGap(53, 53, 53)
+                .addComponent(btn_empleado, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(52, 52, 52)
+                .addComponent(btn_material, javax.swing.GroupLayout.DEFAULT_SIZE, 74, Short.MAX_VALUE)
+                .addGap(42, 42, 42)
+                .addComponent(btn_producto, javax.swing.GroupLayout.DEFAULT_SIZE, 74, Short.MAX_VALUE)
+                .addGap(82, 82, 82))
         );
 
         btn_crearE.setText("CREAR REGISTRO");
@@ -486,9 +449,9 @@ public class main extends javax.swing.JFrame {
         );
 
         btn_crearM.setText("CREAR REGISTRO");
-        btn_crearM.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_crearMActionPerformed(evt);
+        btn_crearM.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_crearMMouseClicked(evt);
             }
         });
 
@@ -530,7 +493,7 @@ public class main extends javax.swing.JFrame {
                         .addGap(331, 331, 331)
                         .addGroup(jp_nuevo1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(tf_serieM, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(tf_marcaE, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tf_marcaM, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btn_crearM, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addGap(228, 228, 228))
@@ -549,7 +512,7 @@ public class main extends javax.swing.JFrame {
                 .addGap(44, 44, 44)
                 .addGroup(jp_nuevo1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel15)
-                    .addComponent(tf_marcaE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tf_marcaM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(41, 41, 41)
                 .addGroup(jp_nuevo1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel16)
@@ -1045,18 +1008,12 @@ public class main extends javax.swing.JFrame {
             }
         });
 
-        jMenu1.setText("File");
-        jMenu1.addMouseListener(new java.awt.event.MouseAdapter() {
+        btn_administracion.setText("Administracion");
+        btn_administracion.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jMenu1MouseClicked(evt);
+                btn_administracionMouseClicked(evt);
             }
         });
-
-        MenuAdm.setText("Administrador");
-        jMenu1.add(MenuAdm);
-
-        jMenuBar1.add(jMenu1);
-
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -1065,73 +1022,52 @@ public class main extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(147, 147, 147)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 289, Short.MAX_VALUE)
+                    .addComponent(btn_administracion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(176, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(143, 143, 143)
+                .addGap(91, 91, 91)
+                .addComponent(btn_administracion, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(144, Short.MAX_VALUE))
+                .addContainerGap(121, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenu1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu1MouseClicked
-        jd_login.setModal(true);
-        jd_login.pack();
-        jd_login.setLocationRelativeTo(this);
-        jd_login.setVisible(true);
-    }//GEN-LAST:event_jMenu1MouseClicked
-
-    private void btn_loginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_loginMouseClicked
-        String codigo = tf_codigo.getText();
-        if(codigo.equals("1234")){
-            jl_opciones.show();
-            btn_producto.show();
-            btn_material.show();
-            btn_empleado.show();
-        }else
-            JOptionPane.showMessageDialog(this, "Error codigo invalido");
-            
-    }//GEN-LAST:event_btn_loginMouseClicked
-
-    private void jd_loginWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_jd_loginWindowActivated
-        tf_codigo.setText("");
-        jl_opciones.hide();
-        btn_producto.hide();
-        btn_material.hide();
-        btn_empleado.hide();
-    }//GEN-LAST:event_jd_loginWindowActivated
-
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void btn_empleadoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_empleadoMouseClicked
+        this.jd_login.setVisible(false);
         jd_empleado.setModal(true);
         jd_empleado.pack();
         jd_empleado.setLocationRelativeTo(this);
         jd_empleado.setVisible(true);
         DefaultComboBoxModel modelo = new DefaultComboBoxModel();
         /*for (int i = 0; i < vehiculos.size(); i++) {
-            modelo.addElement(vehiculos.get(i));
-        }*/
+         modelo.addElement(vehiculos.get(i));
+         }*/
         cb_empleado.setModel(modelo);
         cb_empleados.setModel(modelo);
     }//GEN-LAST:event_btn_empleadoMouseClicked
 
     private void btn_materialMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_materialMouseClicked
+        this.jd_login.setVisible(false);
         jd_material.setModal(true);
         jd_material.pack();
         jd_material.setLocationRelativeTo(this);
         jd_material.setVisible(true);
         DefaultComboBoxModel modelo = new DefaultComboBoxModel();
         /*for (int i = 0; i < vehiculos.size(); i++) {
-            modelo.addElement(vehiculos.get(i));
-        }*/
+         modelo.addElement(vehiculos.get(i));
+         }*/
         cb_material.setModel(modelo);
         cb_materiales.setModel(modelo);
     }//GEN-LAST:event_btn_materialMouseClicked
@@ -1143,21 +1079,21 @@ public class main extends javax.swing.JFrame {
         jd_producto.setVisible(true);
         DefaultComboBoxModel modelo = new DefaultComboBoxModel();
         /*for (int i = 0; i < vehiculos.size(); i++) {
-            modelo.addElement(vehiculos.get(i));
-        }*/
+         modelo.addElement(vehiculos.get(i));
+         }*/
         cb_producto.setModel(modelo);
         cb_productos.setModel(modelo);
         DefaultComboBoxModel mode = new DefaultComboBoxModel();
         /*for (int i = 0; i < vehiculos.size(); i++) {
-            mode.addElement(vehiculos.get(i));
-        }*/
+         mode.addElement(vehiculos.get(i));
+         }*/
         cb_material1.setModel(mode);
         cb_material2.setModel(mode);
     }//GEN-LAST:event_btn_productoMouseClicked
 
     private void btn_seleccionarEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_seleccionarEActionPerformed
-   
-        empleadoE = (Empleado)cb_empleado.getSelectedItem();
+
+        empleadoE = (Empleado) cb_empleado.getSelectedItem();
 
         tf_nombre1.setText(empleadoE.getNombre());
         tf_id1.setText(empleadoE.getId());
@@ -1165,39 +1101,39 @@ public class main extends javax.swing.JFrame {
         ta_direccion1.setText(empleadoE.getDireccion());
         sp_salario1.setValue(empleadoE.getSalario());
         //*****HACER TODOS LOS CAMBIOS DE MODIFICAR EN LA LISTA O PILA
-        
+
     }//GEN-LAST:event_btn_seleccionarEActionPerformed
 
     private void btn_seleccionarMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_seleccionarMActionPerformed
-        materialE = (Material)cb_material.getSelectedItem();
+        materialE = (Material) cb_material.getSelectedItem();
 
         tf_nombreM1.setText(materialE.getNombre());
         tf_descripcionM1.setText(materialE.getDescripcion());
         tf_marcaE1.setText(materialE.getMarca());
         tf_serieM1.setText(materialE.getNumSerie());
         //*****HACER TODOS LOS CAMBIOS DE MODIFICAR EN LA LISTA O PILA
-        
+
     }//GEN-LAST:event_btn_seleccionarMActionPerformed
 
     private void btn_seleccionarPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_seleccionarPActionPerformed
-        productoE = (Producto)cb_producto.getSelectedItem();
+        productoE = (Producto) cb_producto.getSelectedItem();
 
         tf_nombre5.setText(productoE.getNombre());
         tf_descripcion1.setText(productoE.getDescripcion());
         tf_marcaE1.setText(empleadoE.getDireccion());
         tf_serieM1.setText(empleadoE.getDireccion());
         //*****HACER TODOS LOS CAMBIOS DE MODIFICAR EN LA LISTA O PILA
-        
+
     }//GEN-LAST:event_btn_seleccionarPActionPerformed
 
     private void btn_anadirMaterialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_anadirMaterialActionPerformed
-        materialE = (Material)cb_material1.getSelectedItem();
-        ta_materiales.append(materialE.getNombre()+"\n");
+        materialE = (Material) cb_material1.getSelectedItem();
+        ta_materiales.append(materialE.getNombre() + "\n");
     }//GEN-LAST:event_btn_anadirMaterialActionPerformed
 
     private void btn_anadirMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_anadirMActionPerformed
-        materialE = (Material)cb_material2.getSelectedItem();
-        ta_materiales1.append(materialE.getNombre()+"\n");
+        materialE = (Material) cb_material2.getSelectedItem();
+        ta_materiales1.append(materialE.getNombre() + "\n");
     }//GEN-LAST:event_btn_anadirMActionPerformed
 
     private void jTabbedPane3PropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jTabbedPane3PropertyChange
@@ -1209,10 +1145,10 @@ public class main extends javax.swing.JFrame {
         cb_productos.removeItem(cb_productos.getSelectedItem());
         DefaultComboBoxModel modelo = new DefaultComboBoxModel();
         /*for (int i = 0; i < vehiculos.size(); i++) {
-            modelo.addElement(vehiculos.get(i));
-        }*/
+         modelo.addElement(vehiculos.get(i));
+         }*/
         cb_productos.setModel(modelo);
-        
+
         //*****HACER TODOS LOS CAMBIOS DE ELIMINAR EN LA LISTA O PILA
     }//GEN-LAST:event_btn_eliminarPActionPerformed
 
@@ -1220,10 +1156,10 @@ public class main extends javax.swing.JFrame {
         cb_materiales.removeItem(cb_materiales.getSelectedItem());
         DefaultComboBoxModel modelo = new DefaultComboBoxModel();
         /*for (int i = 0; i < vehiculos.size(); i++) {
-            modelo.addElement(vehiculos.get(i));
-        }*/
+         modelo.addElement(vehiculos.get(i));
+         }*/
         cb_materiales.setModel(modelo);
-        
+
         //*****HACER TODOS LOS CAMBIOS DE ELIMINAR EN LA LISTA O PILA
     }//GEN-LAST:event_btn_eliminarMActionPerformed
 
@@ -1231,24 +1167,59 @@ public class main extends javax.swing.JFrame {
         cb_empleados.removeItem(cb_empleados.getSelectedItem());
         DefaultComboBoxModel modelo = new DefaultComboBoxModel();
         /*for (int i = 0; i < vehiculos.size(); i++) {
-            modelo.addElement(vehiculos.get(i));
-        }*/
+         modelo.addElement(vehiculos.get(i));
+         }*/
         cb_empleados.setModel(modelo);
-        
+
         //*****HACER TODOS LOS CAMBIOS DE ELIMINAR EN LA LISTA O PILA
     }//GEN-LAST:event_btn_eliminarEActionPerformed
 
     private void btn_crearEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_crearEActionPerformed
-        
-    }//GEN-LAST:event_btn_crearEActionPerformed
 
-    private void btn_crearMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_crearMActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btn_crearMActionPerformed
+    }//GEN-LAST:event_btn_crearEActionPerformed
 
     private void btn_crearPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_crearPActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_crearPActionPerformed
+
+    private void btn_administracionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_administracionMouseClicked
+        this.setVisible(false);
+        this.jd_login.setModal(true);
+        this.jd_login.pack();
+        this.jd_login.setVisible(true);
+    }//GEN-LAST:event_btn_administracionMouseClicked
+
+    private void btn_crearMMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_crearMMouseClicked
+        String nombre;
+        String descripcion;
+        String marca;
+        String numSerie;
+        
+        nombre = this.tf_nombreM.getText();
+        descripcion = this.tf_descripcionM.getText();
+        marca = this.tf_marcaM.getText();
+        numSerie = this.tf_serieM.getText();
+        
+        materialE = new Material(nombre, descripcion, marca,numSerie);
+        
+        if(materiales.getSize() == 0){
+            materiales.push(materialE);
+        }else{
+            for(int i = 0; i<materiales.getSize(); i++){
+                if(((Material)materiales.get(i)).getNombre().toLowerCase().equals(nombre.toLowerCase())){
+                    ((Pila)materiales.get(i)).push(materialE);
+                }else{
+                    materiales.push(new Pila(materialE));
+                    
+                }
+            }
+        }
+        
+        this.tf_nombreM.setText("");
+        this.tf_descripcionM.setText("");
+        this.tf_marcaM.setText("");
+        this.tf_serieM.setText("");
+    }//GEN-LAST:event_btn_crearMMouseClicked
 
     /**
      * @param args the command line arguments
@@ -1286,7 +1257,7 @@ public class main extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenuItem MenuAdm;
+    private javax.swing.JButton btn_administracion;
     private javax.swing.JButton btn_anadirM;
     private javax.swing.JButton btn_anadirMaterial;
     private javax.swing.JButton btn_crearE;
@@ -1296,7 +1267,6 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JButton btn_eliminarM;
     private javax.swing.JButton btn_eliminarP;
     private javax.swing.JButton btn_empleado;
-    private javax.swing.JButton btn_login;
     private javax.swing.JButton btn_material;
     private javax.swing.JButton btn_modificarE;
     private javax.swing.JButton btn_modificarM;
@@ -1314,7 +1284,6 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JComboBox cb_producto;
     private javax.swing.JComboBox<String> cb_productos;
     private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -1351,7 +1320,6 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
@@ -1388,15 +1356,14 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JTextArea ta_direccion1;
     private javax.swing.JTextArea ta_materiales;
     private javax.swing.JTextArea ta_materiales1;
-    private javax.swing.JTextField tf_codigo;
     private javax.swing.JTextField tf_descripcion;
     private javax.swing.JTextField tf_descripcion1;
     private javax.swing.JTextField tf_descripcionM;
     private javax.swing.JTextField tf_descripcionM1;
     private javax.swing.JTextField tf_id;
     private javax.swing.JTextField tf_id1;
-    private javax.swing.JTextField tf_marcaE;
     private javax.swing.JTextField tf_marcaE1;
+    private javax.swing.JTextField tf_marcaM;
     private javax.swing.JTextField tf_nombre;
     private javax.swing.JTextField tf_nombre1;
     private javax.swing.JTextField tf_nombre4;
@@ -1410,13 +1377,14 @@ public class main extends javax.swing.JFrame {
     Empleado empleadoE = new Empleado();
     Material materialE = new Material();
     Producto productoE = new Producto();
-
+    Lista materiales = new Lista();
+    
     /*
-    Observaciones:
-        -Deberiamos de cambiar el atributo tiempo como date con el formato de hrs mins segs
-        -Hice la lista de materiales de productos con un text area pero necesito un j list para que se almacenen como objetos? podria ir almacenando en los materiales internamente pero no sabria como datarlo despues
-        -Falta hacer las listas de cada uno, por eso todavia no se como recorrer los fors de cada combo box (Productos, Materiales, Empleados)
-        -Quedan pendientes los metodos de eliminar, modificar, y crear. Igual todavia no se puede porque no estan las listas
-        -Todavia falta el panel de ensamblaje
-    */
+     Observaciones:
+     -Deberiamos de cambiar el atributo tiempo como date con el formato de hrs mins segs
+     -Hice la lista de materiales de productos con un text area pero necesito un j list para que se almacenen como objetos? podria ir almacenando en los materiales internamente pero no sabria como datarlo despues
+     -Falta hacer las listas de cada uno, por eso todavia no se como recorrer los fors de cada combo box (Productos, Materiales, Empleados)
+     -Quedan pendientes los metodos de eliminar, modificar, y crear. Igual todavia no se puede porque no estan las listas
+     -Todavia falta el panel de ensamblaje
+     */
 }

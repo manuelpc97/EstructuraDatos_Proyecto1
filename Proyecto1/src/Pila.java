@@ -17,12 +17,12 @@ public class Pila {
         size = 0;
     }
 
-    public Pila(int value) {
+    public Pila(Object value) {
         top = new ListNode(value);
         size = 1;
     }
 
-    public void push(int value) {
+    public void push(Object value) {
         if(size == 0){
             top = new ListNode(value);
         }else{
@@ -45,6 +45,7 @@ public class Pila {
         ListNode last = top;
         top = top.getPrevious();
         top.setNext(null);
+        size--;
         return last.getValue();
     }
     

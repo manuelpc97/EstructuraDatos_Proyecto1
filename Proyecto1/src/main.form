@@ -3,86 +3,46 @@
 <Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <NonVisualComponents>
     <Container class="javax.swing.JDialog" name="jd_login">
-      <Events>
-        <EventHandler event="windowActivated" listener="java.awt.event.WindowListener" parameters="java.awt.event.WindowEvent" handler="jd_loginWindowActivated"/>
-      </Events>
 
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="-2" pref="272" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="btn_material" min="-2" max="-2" attributes="0"/>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
-                                  <Component id="btn_login" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="221" max="-2" attributes="0"/>
+                          <Component id="jl_opciones" min="-2" pref="167" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="90" max="-2" attributes="0"/>
-                          <Component id="btn_empleado" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="264" max="-2" attributes="0"/>
-                          <Component id="btn_producto" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="211" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jLabel1" min="-2" pref="197" max="-2" attributes="0"/>
-                              <Component id="tf_codigo" min="-2" pref="173" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="177" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="btn_empleado" pref="244" max="32767" attributes="0"/>
+                              <Component id="btn_material" max="32767" attributes="0"/>
+                              <Component id="btn_producto" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
-                  <EmptySpace pref="124" max="32767" attributes="0"/>
-              </Group>
-              <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                  <Component id="jl_opciones" min="-2" pref="64" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="216" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
-                  <Component id="jLabel1" min="-2" pref="60" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="tf_codigo" min="-2" pref="43" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                  <Component id="btn_login" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                   <Component id="jl_opciones" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="btn_empleado" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="btn_material" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="btn_producto" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace pref="142" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
+                  <Component id="btn_empleado" min="-2" pref="74" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
+                  <Component id="btn_material" pref="74" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                  <Component id="btn_producto" pref="74" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="jLabel1">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Ingrese Codigo de Administrador"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="tf_codigo">
-        </Component>
-        <Component class="javax.swing.JButton" name="btn_login">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="ok"/>
-          </Properties>
-          <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btn_loginMouseClicked"/>
-          </Events>
-        </Component>
         <Component class="javax.swing.JButton" name="btn_empleado">
           <Properties>
             <Property name="text" type="java.lang.String" value="Empleado"/>
@@ -109,7 +69,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jl_opciones">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Opciones"/>
+            <Property name="text" type="java.lang.String" value="Elementos a Gestionar"/>
           </Properties>
         </Component>
       </SubComponents>
@@ -660,7 +620,7 @@
                                   <EmptySpace min="-2" pref="331" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="tf_serieM" min="-2" pref="252" max="-2" attributes="0"/>
-                                      <Component id="tf_marcaE" alignment="0" min="-2" pref="252" max="-2" attributes="0"/>
+                                      <Component id="tf_marcaM" alignment="0" min="-2" pref="252" max="-2" attributes="0"/>
                                       <Component id="btn_crearM" alignment="0" min="-2" pref="169" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -686,7 +646,7 @@
                           <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel15" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="tf_marcaE" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="tf_marcaM" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
@@ -706,7 +666,7 @@
                     <Property name="text" type="java.lang.String" value="CREAR REGISTRO"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_crearMActionPerformed"/>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btn_crearMMouseClicked"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel13">
@@ -745,7 +705,7 @@
                 </Component>
                 <Component class="javax.swing.JTextField" name="tf_descripcionM">
                 </Component>
-                <Component class="javax.swing.JTextField" name="tf_marcaE">
+                <Component class="javax.swing.JTextField" name="tf_marcaM">
                 </Component>
                 <Component class="javax.swing.JTextField" name="tf_serieM">
                 </Component>
@@ -1558,23 +1518,6 @@
       </SubComponents>
     </Container>
     <Menu class="javax.swing.JMenuBar" name="jMenuBar1">
-      <SubComponents>
-        <Menu class="javax.swing.JMenu" name="jMenu1">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="File"/>
-          </Properties>
-          <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jMenu1MouseClicked"/>
-          </Events>
-          <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="MenuAdm">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Administrador"/>
-              </Properties>
-            </MenuItem>
-          </SubComponents>
-        </Menu>
-      </SubComponents>
     </Menu>
   </NonVisualComponents>
   <Properties>
@@ -1602,7 +1545,10 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="147" max="-2" attributes="0"/>
-              <Component id="jButton1" min="-2" pref="289" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="jButton1" pref="289" max="32767" attributes="0"/>
+                  <Component id="btn_administracion" max="32767" attributes="0"/>
+              </Group>
               <EmptySpace pref="176" max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -1610,9 +1556,11 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="143" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="91" max="-2" attributes="0"/>
+              <Component id="btn_administracion" min="-2" pref="76" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="jButton1" min="-2" pref="76" max="-2" attributes="0"/>
-              <EmptySpace pref="144" max="32767" attributes="0"/>
+              <EmptySpace pref="121" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -1624,6 +1572,14 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btn_administracion">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Administracion"/>
+      </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btn_administracionMouseClicked"/>
       </Events>
     </Component>
   </SubComponents>
