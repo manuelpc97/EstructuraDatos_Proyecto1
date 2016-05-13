@@ -1278,9 +1278,6 @@ public class main extends javax.swing.JFrame {
         cb_empleados.setModel(modelo);
     }//GEN-LAST:event_btn_eliminarEMouseClicked
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
