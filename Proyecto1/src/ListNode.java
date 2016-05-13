@@ -12,6 +12,10 @@ public class ListNode {
     Object value;
     ListNode next;
     ListNode previous;
+
+    public ListNode() {
+    }
+    
     
     public ListNode(Object value){
         this.value = value;

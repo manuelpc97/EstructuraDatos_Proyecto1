@@ -9,6 +9,7 @@
  * @author manuel
  */
 public class Pila {
+
     ListNode top;
     int size;
 
@@ -23,9 +24,9 @@ public class Pila {
     }
 
     public void push(Object value) {
-        if(size == 0){
+        if (size == 0) {
             top = new ListNode(value);
-        }else{
+        } else {
             top.setNext(new ListNode(value));
             top.getNext().setPrevious(top);
             top = top.getNext();
@@ -42,14 +43,19 @@ public class Pila {
     }
 
     public Object pop() {
-        ListNode last = top;
-        top = top.getPrevious();
-        top.setNext(null);
+        ListNode last = new ListNode();
+        if (size > 1) {
+            last = top;
+            top = top.getPrevious();
+            top.setNext(null);
+        }else{
+            last = top;
+        }
         size--;
         return last.getValue();
     }
-    
-    public Object peek(){
+
+    public Object peek() {
         return top.getValue();
     }
 }
