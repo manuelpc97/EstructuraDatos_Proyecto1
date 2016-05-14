@@ -51,9 +51,15 @@ public class Producto {
         return materiales;
     }
 
+    public void setMateriales(Lista materiales) {
+        this.materiales = materiales;
+    }
+    
+    
+
     @Override
     public String toString() {
-        return "Producto: " + nombre + "; Tiempo de ensamblaje: " + tiempo + "s";
+        return "Producto: " + nombre;
     }
     
     
