@@ -3,6 +3,9 @@
 <Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <NonVisualComponents>
     <Container class="javax.swing.JDialog" name="jd_administracion">
+      <Events>
+        <EventHandler event="windowClosed" listener="java.awt.event.WindowListener" parameters="java.awt.event.WindowEvent" handler="jd_administracionWindowClosed"/>
+      </Events>
 
       <Layout>
         <DimensionLayout dim="0">
@@ -75,6 +78,9 @@
       </SubComponents>
     </Container>
     <Container class="javax.swing.JDialog" name="jd_empleado">
+      <Events>
+        <EventHandler event="windowClosed" listener="java.awt.event.WindowListener" parameters="java.awt.event.WindowEvent" handler="jd_empleadoWindowClosed"/>
+      </Events>
 
       <Layout>
         <DimensionLayout dim="0">
@@ -571,6 +577,9 @@
       </SubComponents>
     </Container>
     <Container class="javax.swing.JDialog" name="jd_material">
+      <Events>
+        <EventHandler event="windowClosed" listener="java.awt.event.WindowListener" parameters="java.awt.event.WindowEvent" handler="jd_materialWindowClosed"/>
+      </Events>
 
       <Layout>
         <DimensionLayout dim="0">
@@ -957,6 +966,9 @@
       </SubComponents>
     </Container>
     <Container class="javax.swing.JDialog" name="jd_producto">
+      <Events>
+        <EventHandler event="windowClosed" listener="java.awt.event.WindowListener" parameters="java.awt.event.WindowEvent" handler="jd_productoWindowClosed"/>
+      </Events>
 
       <Layout>
         <DimensionLayout dim="0">
@@ -1208,56 +1220,62 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jLabel38" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel39" min="-2" max="-2" attributes="0"/>
-                                  </Group>
+                              <Component id="jLabel38" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel39" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="1" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="1" attributes="0">
+                                          <EmptySpace min="0" pref="86" max="32767" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Group type="102" alignment="1" attributes="0">
-                                                  <EmptySpace min="0" pref="86" max="32767" attributes="0"/>
-                                                  <Group type="103" groupAlignment="0" attributes="0">
-                                                      <Component id="tf_nombre5" min="-2" pref="252" max="-2" attributes="0"/>
-                                                      <Component id="tf_descripcion5" min="-2" pref="252" max="-2" attributes="0"/>
-                                                  </Group>
-                                              </Group>
-                                              <Component id="tf_tiempo5" max="32767" attributes="0"/>
+                                              <Component id="tf_nombre5" min="-2" pref="252" max="-2" attributes="0"/>
+                                              <Component id="tf_descripcion5" min="-2" pref="252" max="-2" attributes="0"/>
                                           </Group>
-                                          <EmptySpace min="309" pref="309" max="-2" attributes="0"/>
                                       </Group>
-                                      <Group type="102" attributes="0">
-                                          <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                                          <Component id="jLabel30" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="cb_producto" min="-2" pref="182" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="btn_seleccionarP" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="212" max="-2" attributes="0"/>
-                                      </Group>
+                                      <Component id="tf_tiempo5" max="32767" attributes="0"/>
                                   </Group>
+                                  <EmptySpace min="309" pref="309" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="btn_deleteMatP" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="cb_materialesPro" alignment="0" min="-2" pref="157" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" pref="155" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="btn_addMatPro" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel18" min="-2" max="-2" attributes="0"/>
-                                      <Component id="cb_inventarioM" alignment="0" min="-2" pref="171" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                                  <Component id="jLabel30" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="cb_producto" min="-2" pref="182" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="btn_seleccionarP" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="212" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace max="32767" attributes="0"/>
-                          <Component id="btn_modificarP" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="323" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="btn_modificarP" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="323" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="cb_materialesPro" alignment="0" min="-2" pref="157" max="-2" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                                          <Component id="btn_deleteMatP" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="155" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jLabel18" min="-2" max="-2" attributes="0"/>
+                                      <Component id="cb_inventarioM" alignment="0" min="-2" pref="171" max="-2" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                                          <Component id="btn_addMatPro" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="154" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
                       </Group>
                       <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
@@ -1289,7 +1307,7 @@
                               <Component id="jLabel39" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="tf_tiempo5" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel18" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -1299,17 +1317,12 @@
                               <Component id="cb_materialesPro" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="cb_inventarioM" min="-2" max="-2" attributes="0"/>
                           </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="btn_deleteMatP" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
-                                  <Component id="btn_addMatPro" min="-2" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="btn_deleteMatP" min="-2" max="-2" attributes="0"/>
+                              <Component id="btn_addMatPro" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
                           <Component id="btn_modificarP" min="-2" max="-2" attributes="0"/>
                           <EmptySpace pref="84" max="32767" attributes="0"/>
                       </Group>
@@ -1518,6 +1531,9 @@
         </Property>
         <Property name="resizable" type="boolean" value="false"/>
       </Properties>
+      <Events>
+        <EventHandler event="windowClosed" listener="java.awt.event.WindowListener" parameters="java.awt.event.WindowEvent" handler="jd_ensamblajeWindowClosed"/>
+      </Events>
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
         <Property name="useNullLayout" type="boolean" value="true"/>

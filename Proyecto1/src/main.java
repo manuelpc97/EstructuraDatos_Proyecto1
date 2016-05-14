@@ -150,6 +150,12 @@ public class main extends javax.swing.JFrame {
         jLabel20 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
 
+        jd_administracion.addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosed(java.awt.event.WindowEvent evt) {
+                jd_administracionWindowClosed(evt);
+            }
+        });
+
         btn_empleado.setText("Empleado");
         btn_empleado.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -203,6 +209,12 @@ public class main extends javax.swing.JFrame {
                 .addComponent(btn_producto, javax.swing.GroupLayout.DEFAULT_SIZE, 74, Short.MAX_VALUE)
                 .addGap(82, 82, 82))
         );
+
+        jd_empleado.addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosed(java.awt.event.WindowEvent evt) {
+                jd_empleadoWindowClosed(evt);
+            }
+        });
 
         jTabbedPane1.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
@@ -485,6 +497,12 @@ public class main extends javax.swing.JFrame {
                 .addGap(19, 19, 19))
         );
 
+        jd_material.addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosed(java.awt.event.WindowEvent evt) {
+                jd_materialWindowClosed(evt);
+            }
+        });
+
         jTabbedPane2.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
                 jTabbedPane2StateChanged(evt);
@@ -717,6 +735,12 @@ public class main extends javax.swing.JFrame {
                 .addGap(19, 19, 19))
         );
 
+        jd_producto.addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosed(java.awt.event.WindowEvent evt) {
+                jd_productoWindowClosed(evt);
+            }
+        });
+
         jTabbedPane3.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
                 jTabbedPane3StateChanged(evt);
@@ -878,43 +902,47 @@ public class main extends javax.swing.JFrame {
             .addGroup(jp_editar2Layout.createSequentialGroup()
                 .addGap(72, 72, 72)
                 .addGroup(jp_editar2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jp_editar2Layout.createSequentialGroup()
-                        .addGroup(jp_editar2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel38)
-                            .addComponent(jLabel39))
+                    .addComponent(jLabel38)
+                    .addComponent(jLabel39))
+                .addGroup(jp_editar2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_editar2Layout.createSequentialGroup()
                         .addGroup(jp_editar2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_editar2Layout.createSequentialGroup()
+                                .addGap(0, 86, Short.MAX_VALUE)
                                 .addGroup(jp_editar2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_editar2Layout.createSequentialGroup()
-                                        .addGap(0, 86, Short.MAX_VALUE)
-                                        .addGroup(jp_editar2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(tf_nombre5, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(tf_descripcion5, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addComponent(tf_tiempo5))
-                                .addGap(309, 309, 309))
-                            .addGroup(jp_editar2Layout.createSequentialGroup()
-                                .addGap(31, 31, 31)
-                                .addComponent(jLabel30)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cb_producto, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btn_seleccionarP)
-                                .addGap(212, 212, 212))))
+                                    .addComponent(tf_nombre5, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(tf_descripcion5, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(tf_tiempo5))
+                        .addGap(309, 309, 309))
                     .addGroup(jp_editar2Layout.createSequentialGroup()
-                        .addGroup(jp_editar2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(btn_deleteMatP)
-                            .addComponent(cb_materialesPro, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(155, 155, 155)
-                        .addGroup(jp_editar2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btn_addMatPro)
-                            .addComponent(jLabel18)
-                            .addComponent(cb_inventarioM, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                        .addGap(31, 31, 31)
+                        .addComponent(jLabel30)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cb_producto, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btn_seleccionarP)
+                        .addGap(212, 212, 212))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_editar2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btn_modificarP)
-                .addGap(323, 323, 323))
+                .addGroup(jp_editar2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_editar2Layout.createSequentialGroup()
+                        .addComponent(btn_modificarP)
+                        .addGap(323, 323, 323))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_editar2Layout.createSequentialGroup()
+                        .addGroup(jp_editar2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addComponent(cb_materialesPro, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jp_editar2Layout.createSequentialGroup()
+                                .addGap(34, 34, 34)
+                                .addComponent(btn_deleteMatP)))
+                        .addGap(155, 155, 155)
+                        .addGroup(jp_editar2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel18)
+                            .addComponent(cb_inventarioM, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jp_editar2Layout.createSequentialGroup()
+                                .addGap(40, 40, 40)
+                                .addComponent(btn_addMatPro)))
+                        .addGap(154, 154, 154))))
             .addGroup(jp_editar2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jp_editar2Layout.createSequentialGroup()
                     .addGap(86, 86, 86)
@@ -939,7 +967,7 @@ public class main extends javax.swing.JFrame {
                 .addGroup(jp_editar2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel39)
                     .addComponent(tf_tiempo5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32)
+                .addGap(46, 46, 46)
                 .addGroup(jp_editar2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(jLabel18))
@@ -947,14 +975,11 @@ public class main extends javax.swing.JFrame {
                 .addGroup(jp_editar2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(cb_materialesPro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cb_inventarioM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(jp_editar2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jp_editar2Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(btn_deleteMatP))
-                    .addGroup(jp_editar2Layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(btn_addMatPro)))
-                .addGap(57, 57, 57)
+                    .addComponent(btn_deleteMatP)
+                    .addComponent(btn_addMatPro))
+                .addGap(43, 43, 43)
                 .addComponent(btn_modificarP)
                 .addContainerGap(84, Short.MAX_VALUE))
             .addGroup(jp_editar2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1041,6 +1066,11 @@ public class main extends javax.swing.JFrame {
         jd_ensamblaje.setMinimumSize(new java.awt.Dimension(679, 785));
         jd_ensamblaje.setPreferredSize(new java.awt.Dimension(679, 785));
         jd_ensamblaje.setResizable(false);
+        jd_ensamblaje.addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosed(java.awt.event.WindowEvent evt) {
+                jd_ensamblajeWindowClosed(evt);
+            }
+        });
         jd_ensamblaje.getContentPane().setLayout(null);
 
         jl_hora.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
@@ -1198,6 +1228,7 @@ public class main extends javax.swing.JFrame {
         String descripcion;
         String marca;
         String numSerie;
+        
         boolean exist = false;
         nombre = this.tf_nombreM.getText();
         descripcion = this.tf_descripcionM.getText();
@@ -1255,6 +1286,9 @@ public class main extends javax.swing.JFrame {
         String nombre;
         String descripcion;
         String marca;
+        
+        materialE = (Material)cb_material.getSelectedItem();
+        
         int posicion = catalogoMateriales.find(materialE);
         pilaTemporal = (Pila)materiales.get(posicion);
         
@@ -1281,6 +1315,7 @@ public class main extends javax.swing.JFrame {
     private void btn_eliminarMMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_eliminarMMouseClicked
         materialE = (Material) this.cb_materiales.getSelectedItem();
         int posicion = catalogoMateriales.find(materialE);
+        
         catalogoMateriales.remove(posicion);
         materiales.remove(posicion);
         
@@ -1380,7 +1415,6 @@ public class main extends javax.swing.JFrame {
         for(int i = 0; i < productos.getSize(); i++){
             modelo2.addElement(productos.get(i));
         }
-        
         for(int i = 0; i < catalogoMateriales.getSize(); i++){
             modelo.addElement((Material)catalogoMateriales.get(i));
         }
@@ -1413,6 +1447,7 @@ public class main extends javax.swing.JFrame {
         tiempo = Integer.parseInt(this.tf_tiempo4.getText());
         
         productoE = new Producto(nombre, descripcion, tiempo);
+        //materialesProducto
         productoE.setMateriales(materialesProducto);
         materialesProducto = new Lista();
         productos.push(productoE);
@@ -1540,10 +1575,74 @@ public class main extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_ensamblajeMouseClicked
 
     private void btn_ensamblarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_ensamblarMouseClicked
-        // TODO add your handling code here:
+        productoE = (Producto)this.cb_productosE.getSelectedItem();
+        
+        int cont = 0, contMat =0;
+        Lista matProductos = productoE.getMateriales();
+        
+        Lista nombresHechos = new Lista();
+        boolean validacion = true, vNombre = true;
+        String nombre,marca;
+        int posicionMaterial=0;
+        
+        while (validacion){
+            // Primero valida si esta el nombre en la lista de materiales
+            for (int i = 0; i < materiales.size; i++){
+                if(((Material)((Pila)materiales.get(i)).peek()).getNombre().equals(((Producto) matProductos.get(cont)).getNombre()))
+                    posicionMaterial=i;
+                else
+                    validacion = false;
+            }
+            // Despues se asegura de que no haya hecho la validacion de este material
+            for (int i = 0; i < nombresHechos.size; i++){
+                if(((Material)((Pila)materiales.get(i)).peek()).getNombre().equals(nombresHechos.get(i)))
+                    vNombre = false;
+            }
+            // Luego se asegura de que exista la cantidad de materiales
+            if(vNombre && cont<matProductos.getSize()){
+                nombresHechos.push(((Producto) matProductos.get(cont)).getNombre());
+                nombre = ((Material)matProductos.get(cont)).getNombre();
+                marca = ((Material)matProductos.get(cont)).getMarca();
+                if(RepeticionesdeMaterial(nombre, marca, matProductos) > ((Pila)materiales.get(posicionMaterial)).size)
+                    validacion = false;
+            }
+            vNombre = false;
+            cont++;
+        }
+        if(validacion)
+            JOptionPane.showMessageDialog(this, "El proceso ha iniciado con éxito\n El tiempo neto de ensamblaje es ");
+        else
+            JOptionPane.showMessageDialog(this, "Lo sentimos, no hay suficientes materiales en el inventario");
     }//GEN-LAST:event_btn_ensamblarMouseClicked
 
+    private void jd_administracionWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_jd_administracionWindowClosed
+        
+    }//GEN-LAST:event_jd_administracionWindowClosed
 
+    private void jd_empleadoWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_jd_empleadoWindowClosed
+        
+    }//GEN-LAST:event_jd_empleadoWindowClosed
+
+    private void jd_productoWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_jd_productoWindowClosed
+        
+    }//GEN-LAST:event_jd_productoWindowClosed
+
+    private void jd_ensamblajeWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_jd_ensamblajeWindowClosed
+        
+    }//GEN-LAST:event_jd_ensamblajeWindowClosed
+
+    private void jd_materialWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_jd_materialWindowClosed
+        
+    }//GEN-LAST:event_jd_materialWindowClosed
+
+    int RepeticionesdeMaterial(String nombre, String marca, Lista mater){
+        int repeticion = 0;
+        for (int i = 0; i < mater.getSize(); i++) {
+            if(nombre.equals(((Material)mater.get(i)).getNombre()) && marca.equals(((Material)mater.get(i)).getMarca()))
+                repeticion++;
+        }
+        return repeticion-1;
+    }
 
     /**
      * @param args the command line arguments
