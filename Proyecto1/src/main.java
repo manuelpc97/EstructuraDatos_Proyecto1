@@ -137,8 +137,8 @@ public class main extends javax.swing.JFrame {
         jd_ensamblaje = new javax.swing.JDialog();
         jl_hora = new javax.swing.JLabel();
         cb_productosE = new javax.swing.JComboBox();
-        btn_ensamblar = new javax.swing.JButton();
         jLabel19 = new javax.swing.JLabel();
+        btn_ensamblar = new javax.swing.JButton();
         jLabel33 = new javax.swing.JLabel();
         btn_ensamblaje = new javax.swing.JButton();
         btn_administracion = new javax.swing.JButton();
@@ -1044,15 +1044,23 @@ public class main extends javax.swing.JFrame {
         jl_hora.setForeground(new java.awt.Color(255, 255, 255));
         jl_hora.setText("jLabel22");
         jd_ensamblaje.getContentPane().add(jl_hora);
-        jl_hora.setBounds(490, 13, 130, 22);
+        jl_hora.setBounds(530, 10, 140, 22);
 
         cb_productosE.setBackground(new java.awt.Color(153, 0, 0));
         cb_productosE.setFont(new java.awt.Font("PMingLiU-ExtB", 0, 18)); // NOI18N
         jd_ensamblaje.getContentPane().add(cb_productosE);
-        cb_productosE.setBounds(180, 240, 296, 29);
+        cb_productosE.setBounds(170, 220, 340, 60);
+
+        jLabel19.setBackground(new java.awt.Color(51, 0, 51));
+        jLabel19.setFont(new java.awt.Font("PMingLiU-ExtB", 1, 30)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel19.setText("Escoger el producto que desea ensamblar:");
+        jd_ensamblaje.getContentPane().add(jLabel19);
+        jLabel19.setBounds(30, 50, 620, 70);
 
         btn_ensamblar.setBackground(new java.awt.Color(204, 0, 51));
-        btn_ensamblar.setFont(new java.awt.Font("Yu Gothic", 0, 18)); // NOI18N
+        btn_ensamblar.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        btn_ensamblar.setForeground(new java.awt.Color(153, 0, 0));
         btn_ensamblar.setText("ENSAMBLAR");
         btn_ensamblar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -1060,18 +1068,12 @@ public class main extends javax.swing.JFrame {
             }
         });
         jd_ensamblaje.getContentPane().add(btn_ensamblar);
-        btn_ensamblar.setBounds(257, 339, 143, 39);
-
-        jLabel19.setFont(new java.awt.Font("PMingLiU-ExtB", 0, 24)); // NOI18N
-        jLabel19.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel19.setText("Escoger el producto que desea ensamblar:");
-        jd_ensamblaje.getContentPane().add(jLabel19);
-        jLabel19.setBounds(130, 140, 391, 30);
+        btn_ensamblar.setBounds(270, 370, 143, 39);
 
         jLabel33.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imgs/Red-Background-27.png"))); // NOI18N
         jLabel33.setText("jLabel33");
         jd_ensamblaje.getContentPane().add(jLabel33);
-        jLabel33.setBounds(0, 0, 680, 510);
+        jLabel33.setBounds(0, 0, 680, 710);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(690, 490));
