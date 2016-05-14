@@ -1048,11 +1048,21 @@
                                       </Group>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="tf_nombre4" pref="252" max="32767" attributes="0"/>
-                                      <Component id="tf_descripcion4" alignment="0" pref="252" max="32767" attributes="0"/>
-                                      <Component id="jScrollPane4" alignment="1" min="-2" pref="191" max="-2" attributes="0"/>
-                                      <Component id="tf_tiempo4" alignment="0" max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="tf_nombre4" pref="252" max="32767" attributes="0"/>
+                                          <Component id="tf_descripcion4" alignment="0" pref="252" max="32767" attributes="0"/>
+                                          <Component id="jScrollPane4" alignment="1" min="-2" pref="191" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" attributes="0">
+                                          <Component id="tf_tiempo4" min="-2" pref="65" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="jLabel37" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Component id="tf_tiempo6" min="-2" pref="38" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Component id="jLabel40" min="-2" max="-2" attributes="0"/>
+                                      </Group>
                                   </Group>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
@@ -1081,6 +1091,9 @@
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel27" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="tf_tiempo4" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="tf_tiempo6" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel37" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel40" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
@@ -1203,6 +1216,18 @@
                 </Container>
                 <Component class="javax.swing.JTextField" name="tf_tiempo4">
                 </Component>
+                <Component class="javax.swing.JTextField" name="tf_tiempo6">
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel37">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value=":hrs"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel40">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="mins"/>
+                  </Properties>
+                </Component>
               </SubComponents>
             </Container>
             <Container class="javax.swing.JPanel" name="jp_editar2">
@@ -1225,15 +1250,19 @@
                           </Group>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="1" attributes="0">
+                                  <EmptySpace min="0" pref="86" max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <EmptySpace min="0" pref="86" max="32767" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="tf_nombre5" min="-2" pref="252" max="-2" attributes="0"/>
-                                              <Component id="tf_descripcion5" min="-2" pref="252" max="-2" attributes="0"/>
-                                          </Group>
+                                      <Component id="tf_nombre5" min="-2" pref="252" max="-2" attributes="0"/>
+                                      <Component id="tf_descripcion5" min="-2" pref="252" max="-2" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="tf_tiempo5" min="-2" pref="43" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="jLabel41" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="tf_tiempo7" min="-2" pref="41" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="jLabel42" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <Component id="tf_tiempo5" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="309" pref="309" max="-2" attributes="0"/>
                               </Group>
@@ -1244,7 +1273,7 @@
                                   <Component id="cb_producto" min="-2" pref="182" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="btn_seleccionarP" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="212" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -1306,6 +1335,9 @@
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel39" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="tf_tiempo5" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="tf_tiempo7" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel41" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel42" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
@@ -1438,6 +1470,18 @@
                     <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btn_addMatProMouseClicked"/>
                   </Events>
                 </Component>
+                <Component class="javax.swing.JTextField" name="tf_tiempo7">
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel41">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value=":hrs"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel42">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="mins"/>
+                  </Properties>
+                </Component>
               </SubComponents>
             </Container>
             <Container class="javax.swing.JPanel" name="jp_eliminar2">
@@ -1519,7 +1563,6 @@
     </Container>
     <Container class="javax.swing.JDialog" name="jd_ensamblaje">
       <Properties>
-        <Property name="locationByPlatform" type="boolean" value="true"/>
         <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[679, 785]"/>
         </Property>
@@ -1532,6 +1575,7 @@
         <Property name="resizable" type="boolean" value="false"/>
       </Properties>
       <Events>
+        <EventHandler event="windowActivated" listener="java.awt.event.WindowListener" parameters="java.awt.event.WindowEvent" handler="jd_ensamblajeWindowActivated"/>
         <EventHandler event="windowClosed" listener="java.awt.event.WindowListener" parameters="java.awt.event.WindowEvent" handler="jd_ensamblajeWindowClosed"/>
       </Events>
 
@@ -1681,6 +1725,7 @@
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
+    <Property name="title" type="java.lang.String" value="ProyectoEstructuras"/>
     <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
       <Dimension value="[690, 490]"/>
     </Property>
@@ -1717,7 +1762,7 @@
     <Component class="javax.swing.JButton" name="btn_ensamblaje">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="0" green="0" red="cc" type="rgb"/>
+          <Color blue="0" green="0" red="99" type="rgb"/>
         </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Gloucester MT Extra Condensed" size="48" style="0"/>
@@ -1739,7 +1784,7 @@
     <Component class="javax.swing.JButton" name="btn_administracion">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="0" green="0" red="cc" type="rgb"/>
+          <Color blue="0" green="0" red="99" type="rgb"/>
         </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Gloucester MT Extra Condensed" size="48" style="0"/>

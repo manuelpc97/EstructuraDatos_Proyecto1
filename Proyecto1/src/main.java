@@ -17,6 +17,8 @@ public class main extends javax.swing.JFrame {
         HiloHora h = new HiloHora(jl_hora);
         Thread proceso1 = new Thread(h);
         proceso1.start();
+        
+        
     }
 
     /**
@@ -112,6 +114,9 @@ public class main extends javax.swing.JFrame {
         jScrollPane4 = new javax.swing.JScrollPane();
         table1 = new javax.swing.JTable();
         tf_tiempo4 = new javax.swing.JTextField();
+        tf_tiempo6 = new javax.swing.JTextField();
+        jLabel37 = new javax.swing.JLabel();
+        jLabel40 = new javax.swing.JLabel();
         jp_editar2 = new javax.swing.JPanel();
         btn_modificarP = new javax.swing.JButton();
         jLabel26 = new javax.swing.JLabel();
@@ -129,6 +134,9 @@ public class main extends javax.swing.JFrame {
         jLabel18 = new javax.swing.JLabel();
         cb_inventarioM = new javax.swing.JComboBox();
         btn_addMatPro = new javax.swing.JButton();
+        tf_tiempo7 = new javax.swing.JTextField();
+        jLabel41 = new javax.swing.JLabel();
+        jLabel42 = new javax.swing.JLabel();
         jp_eliminar2 = new javax.swing.JPanel();
         btn_eliminarP = new javax.swing.JButton();
         cb_productos = new javax.swing.JComboBox();
@@ -783,6 +791,10 @@ public class main extends javax.swing.JFrame {
         ));
         jScrollPane4.setViewportView(table1);
 
+        jLabel37.setText(":hrs");
+
+        jLabel40.setText("mins");
+
         javax.swing.GroupLayout jp_nuevo2Layout = new javax.swing.GroupLayout(jp_nuevo2);
         jp_nuevo2.setLayout(jp_nuevo2Layout);
         jp_nuevo2Layout.setHorizontalGroup(
@@ -807,11 +819,19 @@ public class main extends javax.swing.JFrame {
                                 .addGap(216, 216, 216)
                                 .addComponent(btn_anadirM)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jp_nuevo2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(tf_nombre4, javax.swing.GroupLayout.DEFAULT_SIZE, 252, Short.MAX_VALUE)
-                            .addComponent(tf_descripcion4, javax.swing.GroupLayout.DEFAULT_SIZE, 252, Short.MAX_VALUE)
-                            .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(tf_tiempo4)))
+                        .addGroup(jp_nuevo2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jp_nuevo2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(tf_nombre4, javax.swing.GroupLayout.DEFAULT_SIZE, 252, Short.MAX_VALUE)
+                                .addComponent(tf_descripcion4, javax.swing.GroupLayout.DEFAULT_SIZE, 252, Short.MAX_VALUE)
+                                .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jp_nuevo2Layout.createSequentialGroup()
+                                .addComponent(tf_tiempo4, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel37)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(tf_tiempo6, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel40))))
                     .addGroup(jp_nuevo2Layout.createSequentialGroup()
                         .addGap(317, 317, 317)
                         .addComponent(btn_crearP)))
@@ -831,7 +851,10 @@ public class main extends javax.swing.JFrame {
                 .addGap(32, 32, 32)
                 .addGroup(jp_nuevo2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel27)
-                    .addComponent(tf_tiempo4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tf_tiempo4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tf_tiempo6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel37)
+                    .addComponent(jLabel40))
                 .addGroup(jp_nuevo2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jp_nuevo2Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -895,6 +918,10 @@ public class main extends javax.swing.JFrame {
             }
         });
 
+        jLabel41.setText(":hrs");
+
+        jLabel42.setText("mins");
+
         javax.swing.GroupLayout jp_editar2Layout = new javax.swing.GroupLayout(jp_editar2);
         jp_editar2.setLayout(jp_editar2Layout);
         jp_editar2Layout.setHorizontalGroup(
@@ -906,13 +933,18 @@ public class main extends javax.swing.JFrame {
                     .addComponent(jLabel39))
                 .addGroup(jp_editar2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_editar2Layout.createSequentialGroup()
+                        .addGap(0, 86, Short.MAX_VALUE)
                         .addGroup(jp_editar2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_editar2Layout.createSequentialGroup()
-                                .addGap(0, 86, Short.MAX_VALUE)
-                                .addGroup(jp_editar2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(tf_nombre5, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(tf_descripcion5, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(tf_tiempo5))
+                            .addComponent(tf_nombre5, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tf_descripcion5, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jp_editar2Layout.createSequentialGroup()
+                                .addComponent(tf_tiempo5, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel41)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(tf_tiempo7, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel42)))
                         .addGap(309, 309, 309))
                     .addGroup(jp_editar2Layout.createSequentialGroup()
                         .addGap(31, 31, 31)
@@ -921,7 +953,7 @@ public class main extends javax.swing.JFrame {
                         .addComponent(cb_producto, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btn_seleccionarP)
-                        .addGap(212, 212, 212))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_editar2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jp_editar2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -966,7 +998,10 @@ public class main extends javax.swing.JFrame {
                 .addGap(35, 35, 35)
                 .addGroup(jp_editar2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel39)
-                    .addComponent(tf_tiempo5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tf_tiempo5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tf_tiempo7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel41)
+                    .addComponent(jLabel42))
                 .addGap(46, 46, 46)
                 .addGroup(jp_editar2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
@@ -1061,12 +1096,14 @@ public class main extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jd_ensamblaje.setLocationByPlatform(true);
         jd_ensamblaje.setMaximumSize(new java.awt.Dimension(679, 785));
         jd_ensamblaje.setMinimumSize(new java.awt.Dimension(679, 785));
         jd_ensamblaje.setPreferredSize(new java.awt.Dimension(679, 785));
         jd_ensamblaje.setResizable(false);
         jd_ensamblaje.addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowActivated(java.awt.event.WindowEvent evt) {
+                jd_ensamblajeWindowActivated(evt);
+            }
             public void windowClosed(java.awt.event.WindowEvent evt) {
                 jd_ensamblajeWindowClosed(evt);
             }
@@ -1124,13 +1161,14 @@ public class main extends javax.swing.JFrame {
         jLabel33.setBounds(0, 0, 680, 760);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("ProyectoEstructuras");
         setMaximumSize(new java.awt.Dimension(690, 490));
         setMinimumSize(new java.awt.Dimension(690, 490));
         setPreferredSize(new java.awt.Dimension(1040, 700));
         setResizable(false);
         getContentPane().setLayout(null);
 
-        btn_ensamblaje.setBackground(new java.awt.Color(204, 0, 0));
+        btn_ensamblaje.setBackground(new java.awt.Color(153, 0, 0));
         btn_ensamblaje.setFont(new java.awt.Font("Gloucester MT Extra Condensed", 0, 48)); // NOI18N
         btn_ensamblaje.setForeground(new java.awt.Color(255, 255, 255));
         btn_ensamblaje.setText("Ensamblaje");
@@ -1142,7 +1180,7 @@ public class main extends javax.swing.JFrame {
         getContentPane().add(btn_ensamblaje);
         btn_ensamblaje.setBounds(380, 440, 400, 110);
 
-        btn_administracion.setBackground(new java.awt.Color(204, 0, 0));
+        btn_administracion.setBackground(new java.awt.Color(153, 0, 0));
         btn_administracion.setFont(new java.awt.Font("Gloucester MT Extra Condensed", 0, 48)); // NOI18N
         btn_administracion.setForeground(new java.awt.Color(255, 255, 255));
         btn_administracion.setText("Administración");
@@ -1440,11 +1478,11 @@ public class main extends javax.swing.JFrame {
     private void btn_crearPMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_crearPMouseClicked
         String nombre;
         String descripcion;
-        int tiempo;
+        String tiempo;
         
         nombre = this.tf_nombre4.getText();
         descripcion = this.tf_descripcion4.getText();
-        tiempo = Integer.parseInt(this.tf_tiempo4.getText());
+        tiempo = this.tf_tiempo4.getText() + ":" +this.tf_tiempo6.getText() + ":00";
         
         productoE = new Producto(nombre, descripcion, tiempo);
         //materialesProducto
@@ -1455,7 +1493,7 @@ public class main extends javax.swing.JFrame {
         this.tf_nombre4.setText("");
         this.tf_descripcion4.setText("");
         this.tf_tiempo4.setText("");
-        
+        tf_tiempo6.setText("");
         DefaultTableModel modelo = (DefaultTableModel)table1.getModel();
         while(modelo.getRowCount()>0){
             modelo.removeRow(modelo.getRowCount()-1);
@@ -1551,11 +1589,12 @@ public class main extends javax.swing.JFrame {
     private void btn_modificarPMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_modificarPMouseClicked
         productoE.setNombre(this.tf_nombre5.getText());
         productoE.setDescripcion(this.tf_descripcion5.getText());
-        productoE.setTiempo(Integer.parseInt(this.tf_tiempo5.getText()));
+        productoE.setTiempo(this.tf_tiempo5.getText()+":"+tf_tiempo7.getText()+":00");
         this.cb_producto.setSelectedIndex(0);
         this.tf_nombre5.setText("");
         this.tf_descripcion5.setText("");
         this.tf_tiempo5.setText("");
+        tf_tiempo7.setText("");
         DefaultComboBoxModel modelo2 = new DefaultComboBoxModel();
         this.cb_inventarioM.setModel(modelo2);
     }//GEN-LAST:event_btn_modificarPMouseClicked
@@ -1616,24 +1655,33 @@ public class main extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_ensamblarMouseClicked
 
     private void jd_administracionWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_jd_administracionWindowClosed
-        
+        this.pack();
+        this.setVisible(true);
     }//GEN-LAST:event_jd_administracionWindowClosed
 
     private void jd_empleadoWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_jd_empleadoWindowClosed
-        
+        this.pack();
+        this.setVisible(true);
     }//GEN-LAST:event_jd_empleadoWindowClosed
 
     private void jd_productoWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_jd_productoWindowClosed
-        
+        this.pack();
+        this.setVisible(true);
     }//GEN-LAST:event_jd_productoWindowClosed
 
     private void jd_ensamblajeWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_jd_ensamblajeWindowClosed
-        
+        this.pack();
+        this.setVisible(true);
     }//GEN-LAST:event_jd_ensamblajeWindowClosed
 
     private void jd_materialWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_jd_materialWindowClosed
-        
+        this.pack();
+        this.setVisible(true);
     }//GEN-LAST:event_jd_materialWindowClosed
+
+    private void jd_ensamblajeWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_jd_ensamblajeWindowActivated
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jd_ensamblajeWindowActivated
 
     int RepeticionesdeMaterial(String nombre, String marca, Lista mater){
         int repeticion = 0;
@@ -1745,9 +1793,13 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -1802,6 +1854,8 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JTextField tf_serieM;
     private javax.swing.JTextField tf_tiempo4;
     private javax.swing.JTextField tf_tiempo5;
+    private javax.swing.JTextField tf_tiempo6;
+    private javax.swing.JTextField tf_tiempo7;
     // End of variables declaration//GEN-END:variables
 
     Empleado empleadoE = new Empleado();

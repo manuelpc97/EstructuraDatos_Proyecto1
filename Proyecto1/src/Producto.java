@@ -11,13 +11,13 @@
 public class Producto {
     String nombre;
     String descripcion;
-    int tiempo;
+    String tiempo;
     Lista materiales;
 
     public Producto() {
     }
 
-    public Producto(String nombre, String descripcion, int tiempo) {
+    public Producto(String nombre, String descripcion, String tiempo) {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.tiempo = tiempo;
@@ -39,11 +39,11 @@ public class Producto {
         this.descripcion = descripcion;
     }
 
-    public int getTiempo() {
+    public String getTiempo() {
         return tiempo;
     }
 
-    public void setTiempo(int tiempo) {
+    public void setTiempo(String tiempo) {
         this.tiempo = tiempo;
     }
 
