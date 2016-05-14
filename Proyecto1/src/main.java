@@ -139,6 +139,8 @@ public class main extends javax.swing.JFrame {
         cb_productosE = new javax.swing.JComboBox();
         jLabel19 = new javax.swing.JLabel();
         btn_ensamblar = new javax.swing.JButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         jLabel33 = new javax.swing.JLabel();
         btn_ensamblaje = new javax.swing.JButton();
         btn_administracion = new javax.swing.JButton();
@@ -1034,9 +1036,10 @@ public class main extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jd_ensamblaje.setMaximumSize(new java.awt.Dimension(679, 502));
-        jd_ensamblaje.setMinimumSize(new java.awt.Dimension(679, 502));
-        jd_ensamblaje.setPreferredSize(new java.awt.Dimension(679, 502));
+        jd_ensamblaje.setLocationByPlatform(true);
+        jd_ensamblaje.setMaximumSize(new java.awt.Dimension(679, 785));
+        jd_ensamblaje.setMinimumSize(new java.awt.Dimension(679, 785));
+        jd_ensamblaje.setPreferredSize(new java.awt.Dimension(679, 785));
         jd_ensamblaje.setResizable(false);
         jd_ensamblaje.getContentPane().setLayout(null);
 
@@ -1049,7 +1052,7 @@ public class main extends javax.swing.JFrame {
         cb_productosE.setBackground(new java.awt.Color(153, 0, 0));
         cb_productosE.setFont(new java.awt.Font("PMingLiU-ExtB", 0, 18)); // NOI18N
         jd_ensamblaje.getContentPane().add(cb_productosE);
-        cb_productosE.setBounds(170, 220, 340, 60);
+        cb_productosE.setBounds(150, 150, 340, 60);
 
         jLabel19.setBackground(new java.awt.Color(51, 0, 51));
         jLabel19.setFont(new java.awt.Font("PMingLiU-ExtB", 1, 30)); // NOI18N
@@ -1060,7 +1063,7 @@ public class main extends javax.swing.JFrame {
 
         btn_ensamblar.setBackground(new java.awt.Color(204, 0, 51));
         btn_ensamblar.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
-        btn_ensamblar.setForeground(new java.awt.Color(153, 0, 0));
+        btn_ensamblar.setForeground(new java.awt.Color(102, 0, 0));
         btn_ensamblar.setText("ENSAMBLAR");
         btn_ensamblar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -1068,12 +1071,27 @@ public class main extends javax.swing.JFrame {
             }
         });
         jd_ensamblaje.getContentPane().add(btn_ensamblar);
-        btn_ensamblar.setBounds(270, 370, 143, 39);
+        btn_ensamblar.setBounds(260, 240, 143, 39);
+
+        jTable1.setBackground(new java.awt.Color(255, 204, 204));
+        jTable1.setFont(new java.awt.Font("Segoe UI Emoji", 0, 18)); // NOI18N
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Producto", "Estado"
+            }
+        ));
+        jScrollPane3.setViewportView(jTable1);
+
+        jd_ensamblaje.getContentPane().add(jScrollPane3);
+        jScrollPane3.setBounds(110, 310, 452, 410);
 
         jLabel33.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imgs/Red-Background-27.png"))); // NOI18N
         jLabel33.setText("jLabel33");
         jd_ensamblaje.getContentPane().add(jLabel33);
-        jLabel33.setBounds(0, 0, 680, 710);
+        jLabel33.setBounds(0, 0, 680, 760);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(690, 490));
@@ -1082,9 +1100,9 @@ public class main extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(null);
 
-        btn_ensamblaje.setBackground(new java.awt.Color(204, 0, 51));
+        btn_ensamblaje.setBackground(new java.awt.Color(204, 0, 0));
         btn_ensamblaje.setFont(new java.awt.Font("Gloucester MT Extra Condensed", 0, 48)); // NOI18N
-        btn_ensamblaje.setForeground(new java.awt.Color(102, 0, 51));
+        btn_ensamblaje.setForeground(new java.awt.Color(255, 255, 255));
         btn_ensamblaje.setText("Ensamblaje");
         btn_ensamblaje.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -1094,9 +1112,9 @@ public class main extends javax.swing.JFrame {
         getContentPane().add(btn_ensamblaje);
         btn_ensamblaje.setBounds(380, 440, 400, 110);
 
-        btn_administracion.setBackground(new java.awt.Color(204, 0, 51));
+        btn_administracion.setBackground(new java.awt.Color(204, 0, 0));
         btn_administracion.setFont(new java.awt.Font("Gloucester MT Extra Condensed", 0, 48)); // NOI18N
-        btn_administracion.setForeground(new java.awt.Color(102, 0, 51));
+        btn_administracion.setForeground(new java.awt.Color(255, 255, 255));
         btn_administracion.setText("Administración");
         btn_administracion.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -1508,6 +1526,10 @@ public class main extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_modificarPMouseClicked
 
     private void btn_ensamblajeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_ensamblajeMouseClicked
+        this.setVisible(false);
+        this.jd_ensamblaje.setModal(true);
+        this.jd_ensamblaje.pack();
+        this.jd_ensamblaje.setVisible(true);
         DefaultComboBoxModel modelo = new DefaultComboBoxModel();
         
         for(int i = 0; i < productos.getSize(); i++){
@@ -1635,10 +1657,12 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTabbedPane jTabbedPane3;
+    private javax.swing.JTable jTable1;
     private javax.swing.JDialog jd_administracion;
     private javax.swing.JDialog jd_empleado;
     private javax.swing.JDialog jd_ensamblaje;
