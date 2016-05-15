@@ -14,6 +14,7 @@ public class Empleado {
     int edad;
     String direccion;
     double salario;
+    boolean ocupado;
 
     public Empleado() {
     }
@@ -66,6 +67,14 @@ public class Empleado {
         this.salario = salario;
     }
 
+    public boolean isOcupado() {
+        return ocupado;
+    }
+
+    public void setOcupado(boolean ocupado) {
+        this.ocupado = ocupado;
+    }
+    
     @Override
     public String toString() {
         return "Empleado: " + nombre + "; Identidad: " + id;

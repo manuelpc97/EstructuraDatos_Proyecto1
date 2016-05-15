@@ -14,7 +14,7 @@ public class main extends javax.swing.JFrame {
      */
     public main() {
         initComponents();
-        HiloHora h = new HiloHora(jl_hora);
+        TiempoMateriales h = new TiempoMateriales(jl_hora);
         Thread proceso1 = new Thread(h);
         proceso1.start();
         
@@ -152,8 +152,6 @@ public class main extends javax.swing.JFrame {
         jLabel33 = new javax.swing.JLabel();
         btn_ensamblaje = new javax.swing.JButton();
         btn_administracion = new javax.swing.JButton();
-        jLabel21 = new javax.swing.JLabel();
-        jLabel31 = new javax.swing.JLabel();
         jLabel32 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -1178,7 +1176,7 @@ public class main extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btn_ensamblaje);
-        btn_ensamblaje.setBounds(380, 440, 400, 110);
+        btn_ensamblaje.setBounds(330, 440, 400, 110);
 
         btn_administracion.setBackground(new java.awt.Color(153, 0, 0));
         btn_administracion.setFont(new java.awt.Font("Gloucester MT Extra Condensed", 0, 48)); // NOI18N
@@ -1190,15 +1188,7 @@ public class main extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btn_administracion);
-        btn_administracion.setBounds(380, 220, 400, 110);
-
-        jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imgs/red-glossy-orb_t (1).png"))); // NOI18N
-        getContentPane().add(jLabel21);
-        jLabel21.setBounds(150, 390, 210, 220);
-
-        jLabel31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imgs/red-glossy-orb_t (1).png"))); // NOI18N
-        getContentPane().add(jLabel31);
-        jLabel31.setBounds(150, 170, 210, 220);
+        btn_administracion.setBounds(330, 220, 400, 110);
 
         jLabel32.setFont(new java.awt.Font("Gloucester MT Extra Condensed", 0, 70)); // NOI18N
         jLabel32.setForeground(new java.awt.Color(255, 255, 255));
@@ -1280,8 +1270,7 @@ public class main extends javax.swing.JFrame {
             materiales.push(new Pila(materialE));
         } else {
             for (int i = 0; i < catalogoMateriales.getSize(); i++) {
-                if (((Material) catalogoMateriales.get(i)).getNombre().toLowerCase().equals(materialE.getNombre().toLowerCase())
-                        && ((Material) catalogoMateriales.get(i)).getMarca().toLowerCase().equals(materialE.getMarca().toLowerCase())) {
+                if (((Material) catalogoMateriales.get(i)).getNombre().toLowerCase().equals(materialE.getNombre().toLowerCase())) {
                     exist = true;
                     ((Pila) materiales.get(i)).push(materialE);
                 }
@@ -1487,7 +1476,6 @@ public class main extends javax.swing.JFrame {
         productoE = new Producto(nombre, descripcion, tiempo);
         //materialesProducto
         productoE.setMateriales(materialesProducto);
-        materialesProducto = new Lista();
         productos.push(productoE);
         
         this.tf_nombre4.setText("");
@@ -1500,6 +1488,14 @@ public class main extends javax.swing.JFrame {
         }
         table1.setModel(modelo);
         modeloTabla = new DefaultTableModel();
+        
+        
+        materialesProducto = new Lista();
+        
+        Lista matProductos = productoE.getMateriales();
+        for (int i = 0; i < productos.getSize(); i++) {
+            System.out.println(productos.get(i));
+        }
     }//GEN-LAST:event_btn_crearPMouseClicked
 
     private void btn_Mmenu1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Mmenu1MouseClicked
@@ -1617,70 +1613,87 @@ public class main extends javax.swing.JFrame {
         productoE = (Producto)this.cb_productosE.getSelectedItem();
         
         int cont = 0, contMat =0;
-        Lista matProductos = productoE.getMateriales();
         
-        Lista nombresHechos = new Lista();
-        boolean validacion = true, vNombre = true;
-        String nombre,marca;
-        int posicionMaterial=0;
+        try{
+            Lista matProductos = productoE.getMateriales();
+            Lista nombresHechos = new Lista();
+            boolean validacion = true, vNombre = true;
+            String nombre,marca;
+            int posicionMaterial=0;
+
+            while (validacion){
+                // Primero valida si esta el nombre en la lista de materiales
+                for (int i = 0; i < materiales.size; i++){
+                    if(((Material)((Pila)materiales.get(i)).peek()).getNombre().equals(((Producto) matProductos.get(cont)).getNombre()))
+                        posicionMaterial=i;
+                    else
+                        validacion = false;
+                }
+                // Despues se asegura de que no haya hecho la validacion de este material
+                for (int i = 0; i < nombresHechos.size; i++){
+                    if(((Material)((Pila)materiales.get(i)).peek()).getNombre().equals(nombresHechos.get(i)))
+                        vNombre = false;
+                }
+                // Luego se asegura de que exista la cantidad de materiales
+                if(vNombre && cont<matProductos.getSize()){
+                    nombresHechos.push(((Producto) matProductos.get(cont)).getNombre());
+                    nombre = ((Material)matProductos.get(cont)).getNombre();
+                    marca = ((Material)matProductos.get(cont)).getMarca();
+                    if(RepeticionesdeMaterial(nombre, marca, matProductos) > ((Pila)materiales.get(posicionMaterial)).size)
+                        validacion = false;
+                }
+                vNombre = false;
+                cont++;
+            }
+            if(validacion)
+                JOptionPane.showMessageDialog(this, "El proceso ha iniciado con éxito\n El tiempo neto de ensamblaje es ");
+            else
+                JOptionPane.showMessageDialog(this, "Lo sentimos, no hay suficientes materiales en el inventario");
+
         
-        while (validacion){
-            // Primero valida si esta el nombre en la lista de materiales
-            for (int i = 0; i < materiales.size; i++){
-                if(((Material)((Pila)materiales.get(i)).peek()).getNombre().equals(((Producto) matProductos.get(cont)).getNombre()))
-                    posicionMaterial=i;
-                else
-                    validacion = false;
-            }
-            // Despues se asegura de que no haya hecho la validacion de este material
-            for (int i = 0; i < nombresHechos.size; i++){
-                if(((Material)((Pila)materiales.get(i)).peek()).getNombre().equals(nombresHechos.get(i)))
-                    vNombre = false;
-            }
-            // Luego se asegura de que exista la cantidad de materiales
-            if(vNombre && cont<matProductos.getSize()){
-                nombresHechos.push(((Producto) matProductos.get(cont)).getNombre());
-                nombre = ((Material)matProductos.get(cont)).getNombre();
-                marca = ((Material)matProductos.get(cont)).getMarca();
-                if(RepeticionesdeMaterial(nombre, marca, matProductos) > ((Pila)materiales.get(posicionMaterial)).size)
-                    validacion = false;
-            }
-            vNombre = false;
-            cont++;
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(this, "Error al encontrar el producto");
         }
-        if(validacion)
-            JOptionPane.showMessageDialog(this, "El proceso ha iniciado con éxito\n El tiempo neto de ensamblaje es ");
-        else
-            JOptionPane.showMessageDialog(this, "Lo sentimos, no hay suficientes materiales en el inventario");
     }//GEN-LAST:event_btn_ensamblarMouseClicked
 
     private void jd_administracionWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_jd_administracionWindowClosed
+        this.jd_administracion.setVisible(false);
         this.pack();
         this.setVisible(true);
     }//GEN-LAST:event_jd_administracionWindowClosed
 
     private void jd_empleadoWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_jd_empleadoWindowClosed
+        this.jd_empleado.setVisible(false);
         this.pack();
         this.setVisible(true);
     }//GEN-LAST:event_jd_empleadoWindowClosed
 
     private void jd_productoWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_jd_productoWindowClosed
+        this.jd_producto.setVisible(false);
         this.pack();
         this.setVisible(true);
     }//GEN-LAST:event_jd_productoWindowClosed
 
     private void jd_ensamblajeWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_jd_ensamblajeWindowClosed
+        this.jd_ensamblaje.setVisible(false);
         this.pack();
         this.setVisible(true);
     }//GEN-LAST:event_jd_ensamblajeWindowClosed
 
     private void jd_materialWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_jd_materialWindowClosed
+        this.jd_material.setVisible(false);
         this.pack();
         this.setVisible(true);
     }//GEN-LAST:event_jd_materialWindowClosed
 
     private void jd_ensamblajeWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_jd_ensamblajeWindowActivated
-        // TODO add your handling code here:
+        DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+        
+        for(int i = 0; i < productos.getSize(); i++){
+            modelo.addElement(productos.get(i));
+        }
+        
+        this.cb_productosE.setModel(modelo);
     }//GEN-LAST:event_jd_ensamblajeWindowActivated
 
     int RepeticionesdeMaterial(String nombre, String marca, Lista mater){
@@ -1776,7 +1789,6 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
@@ -1787,7 +1799,6 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
-    private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
