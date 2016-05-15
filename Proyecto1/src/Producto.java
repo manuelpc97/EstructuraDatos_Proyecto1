@@ -11,13 +11,13 @@
 public class Producto {
     String nombre;
     String descripcion;
-    String tiempo;
+    int tiempo;
     Lista materiales;
 
     public Producto() {
     }
 
-    public Producto(String nombre, String descripcion, String tiempo) {
+    public Producto(String nombre, String descripcion, int tiempo) {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.tiempo = tiempo;
@@ -39,11 +39,11 @@ public class Producto {
         this.descripcion = descripcion;
     }
 
-    public String getTiempo() {
+    public int getTiempo() {
         return tiempo;
     }
 
-    public void setTiempo(String tiempo) {
+    public void setTiempo(int tiempo) {
         this.tiempo = tiempo;
     }
 
@@ -59,7 +59,7 @@ public class Producto {
 
     @Override
     public String toString() {
-        return "Producto: " + nombre;
+        return nombre;
     }
     
     

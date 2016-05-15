@@ -77,7 +77,7 @@ public class Empleado {
     
     @Override
     public String toString() {
-        return "Empleado: " + nombre + "; Identidad: " + id;
+        return  nombre;
     }
     
     

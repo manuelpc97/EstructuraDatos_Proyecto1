@@ -58,7 +58,7 @@ public class Material {
 
     @Override
     public String toString() {
-        return " Material: " + nombre;
+        return nombre + " marca : " + marca;
     }
     
     

@@ -9,17 +9,19 @@
  * @author manuel
  */
 public class Cola {
+
     ListNode head;
     ListNode last;
     int size;
 
     public Cola() {
-        head = null;
+
+        size = 0;
     }
 
-    
     Cola(Object value) {
         head = new ListNode(value);
+        last = head;
         size = 1;
     }
 
@@ -28,27 +30,30 @@ public class Cola {
     }
 
     public void queue(Object object) {
-        ListNode nuevo = new ListNode(object);
-        if(head == null){
-            head = nuevo;
-            last = nuevo;
-        }else{
-            if(head.hasNext() == false){
-                head.setNext(nuevo);
-                last = nuevo;
-            }else{
-                last.setNext(nuevo);
-                last = nuevo;
+        if (size == 0) {
+            head = new ListNode(object);
+            last = head;
+        } else {
+            if (size == 1) {
+                head.setNext(new ListNode(object));
+                last = head.getNext();
+            } else if (size > 1) {
+                last.setNext(new ListNode(object));
+                last = last.getNext();
             }
         }
         size++;
     }
 
     public Object DeQueue() {
-        ListNode retorno = head;
-        head = head.getNext();
+        ListNode temporal = new ListNode(head.getValue());
+        if (size == 1) {
+            head = null;
+        } else {
+            head = head.getNext();
+        }
         size--;
-        return retorno.getValue();
+        return temporal.getValue();
     }
 
     public Object peek() {
@@ -57,5 +62,13 @@ public class Cola {
 
     public int getSize() {
         return size;
+    }
+
+    public boolean isEmpty() {
+        if (size == 0) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
