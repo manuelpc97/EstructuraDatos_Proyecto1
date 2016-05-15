@@ -14,12 +14,9 @@ public class main extends javax.swing.JFrame {
      */
     public main() {
         initComponents();
-        this.setResizable(true);
         TiempoMateriales h = new TiempoMateriales(this.jl_hora);
         Thread proceso1 = new Thread(h);
         proceso1.start();
-        
-        
     }
 
     /**
@@ -149,6 +146,7 @@ public class main extends javax.swing.JFrame {
         table3 = new javax.swing.JTable();
         jl_hora = new javax.swing.JLabel();
         btn_producir = new javax.swing.JButton();
+        btn_Mmenu = new javax.swing.JButton();
         btn_ensamblaje = new javax.swing.JButton();
         btn_administracion = new javax.swing.JButton();
         jLabel32 = new javax.swing.JLabel();
@@ -798,7 +796,7 @@ public class main extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Num. Serie", "Nombre"
+                "Nombre", "Marca"
             }
         ));
         jScrollPane4.setViewportView(table1);
@@ -1120,6 +1118,13 @@ public class main extends javax.swing.JFrame {
             }
         });
 
+        btn_Mmenu.setText("Main Menu");
+        btn_Mmenu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_MmenuMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jd_ensamblajeLayout = new javax.swing.GroupLayout(jd_ensamblaje.getContentPane());
         jd_ensamblaje.getContentPane().setLayout(jd_ensamblajeLayout);
         jd_ensamblajeLayout.setHorizontalGroup(
@@ -1141,6 +1146,8 @@ public class main extends javax.swing.JFrame {
                         .addGap(81, 81, 81))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_ensamblajeLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btn_Mmenu)
+                .addGap(130, 130, 130)
                 .addComponent(btn_producir)
                 .addGap(278, 278, 278))
         );
@@ -1149,11 +1156,11 @@ public class main extends javax.swing.JFrame {
             .addGroup(jd_ensamblajeLayout.createSequentialGroup()
                 .addGroup(jd_ensamblajeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jd_ensamblajeLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel19))
-                    .addGroup(jd_ensamblajeLayout.createSequentialGroup()
                         .addGap(20, 20, 20)
-                        .addComponent(jl_hora, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jl_hora, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jd_ensamblajeLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel19)))
                 .addGap(18, 18, 18)
                 .addGroup(jd_ensamblajeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jd_ensamblajeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -1161,7 +1168,9 @@ public class main extends javax.swing.JFrame {
                         .addComponent(btn_ordenar))
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(30, 30, 30)
-                .addComponent(btn_producir)
+                .addGroup(jd_ensamblajeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_producir)
+                    .addComponent(btn_Mmenu))
                 .addContainerGap(78, Short.MAX_VALUE))
         );
 
@@ -1181,7 +1190,7 @@ public class main extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btn_ensamblaje);
-        btn_ensamblaje.setBounds(330, 440, 400, 110);
+        btn_ensamblaje.setBounds(160, 300, 400, 110);
 
         btn_administracion.setBackground(new java.awt.Color(153, 0, 0));
         btn_administracion.setFont(new java.awt.Font("Gloucester MT Extra Condensed", 0, 48)); // NOI18N
@@ -1193,17 +1202,17 @@ public class main extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btn_administracion);
-        btn_administracion.setBounds(330, 220, 400, 110);
+        btn_administracion.setBounds(160, 160, 400, 110);
 
-        jLabel32.setFont(new java.awt.Font("Gloucester MT Extra Condensed", 0, 70)); // NOI18N
+        jLabel32.setFont(new java.awt.Font("Gloucester MT Extra Condensed", 0, 24)); // NOI18N
         jLabel32.setForeground(new java.awt.Color(255, 255, 255));
         jLabel32.setText("T  R  U  M  P      I  N  D  U  S  T  R  I  E  S");
         getContentPane().add(jLabel32);
-        jLabel32.setBounds(130, 50, 840, 80);
+        jLabel32.setBounds(120, 50, 500, 80);
 
         jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imgs/525848.jpg"))); // NOI18N
         getContentPane().add(jLabel20);
-        jLabel20.setBounds(0, 0, 1040, 690);
+        jLabel20.setBounds(-20, 0, 1040, 690);
         setJMenuBar(jMenuBar1);
 
         pack();
@@ -1222,20 +1231,33 @@ public class main extends javax.swing.JFrame {
 
     private void btn_materialMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_materialMouseClicked
         this.jd_administracion.setVisible(false);
+
+        for (int i = 0; i < materiales.getSize(); i++) {
+            if (((Pila) materiales.get(i)).isEmpty()) {
+                materiales.remove(i);
+                catalogoMateriales.remove(i);
+            }
+        }
+
+        DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+        for (int i = 0; i < catalogoMateriales.getSize(); i++) {
+            modelo.addElement(catalogoMateriales.get(i));
+        }
+        cb_material.setModel(modelo);
+        cb_materiales.setModel(modelo);
+
         jd_material.setModal(true);
         jd_material.pack();
         jd_material.setLocationRelativeTo(this);
         jd_material.setVisible(true);
-        DefaultComboBoxModel modelo = new DefaultComboBoxModel();
-        cb_material.setModel(modelo);
-        cb_materiales.setModel(modelo);
+
     }//GEN-LAST:event_btn_materialMouseClicked
 
     private void btn_productoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_productoMouseClicked
         this.jd_administracion.setVisible(false);
         jd_producto.setModal(true);
         jd_producto.pack();
-         DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+        DefaultComboBoxModel modelo = new DefaultComboBoxModel();
 
         for (int i = 0; i < catalogoMateriales.getSize(); i++) {
             modelo.addElement((Material) catalogoMateriales.get(i));
@@ -1245,7 +1267,7 @@ public class main extends javax.swing.JFrame {
         jd_producto.setVisible(true);
     }//GEN-LAST:event_btn_productoMouseClicked
 
-                           
+
     private void btn_crearEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_crearEActionPerformed
 
     }//GEN-LAST:event_btn_crearEActionPerformed
@@ -1328,16 +1350,21 @@ public class main extends javax.swing.JFrame {
         this.tf_nombreM1.setText("");
         this.tf_descripcionM1.setText("");
         this.tf_marcaM1.setText("");
+        this.tf_amount.setText("");
     }//GEN-LAST:event_jTabbedPane2StateChanged
 
     private void btn_seleccionarMMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_seleccionarMMouseClicked
-        materialE = (Material) this.cb_material.getSelectedItem();
-        int posicion = catalogoMateriales.find(materialE);
-        
-        this.tf_amount.setText(((Pila)materiales.get(posicion)).size + "");
-        this.tf_nombreM1.setText(materialE.getNombre());
-        this.tf_descripcionM1.setText(materialE.getDescripcion());
-        this.tf_marcaM1.setText(materialE.getMarca());;
+        if (catalogoMateriales.getSize() > 0) {
+            materialE = (Material) this.cb_material.getSelectedItem();
+            int posicion = catalogoMateriales.find(materialE);
+
+            this.tf_amount.setText(((Pila) materiales.get(posicion)).size + "");
+            this.tf_nombreM1.setText(materialE.getNombre());
+            this.tf_descripcionM1.setText(materialE.getDescripcion());
+            this.tf_marcaM1.setText(materialE.getMarca());
+        } else {
+            JOptionPane.showMessageDialog(this, "No hay materiales disponibles", "ERROR", JOptionPane.ERROR_MESSAGE, null);
+        }
     }//GEN-LAST:event_btn_seleccionarMMouseClicked
 
     private void btn_modificarMMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_modificarMMouseClicked
@@ -1376,20 +1403,24 @@ public class main extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_modificarMMouseClicked
 
     private void btn_eliminarMMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_eliminarMMouseClicked
-        materialE = (Material) this.cb_materiales.getSelectedItem();
-        int posicion = catalogoMateriales.find(materialE);
-        
-        catalogoMateriales.remove(posicion);
-        materiales.remove(posicion);
-        
-        DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+        if (catalogoMateriales.getSize() > 0) {
+            materialE = (Material) this.cb_materiales.getSelectedItem();
+            int posicion = catalogoMateriales.find(materialE);
 
-        for (int i = 0; i < catalogoMateriales.getSize(); i++) {
-            modelo.addElement((Material) catalogoMateriales.get(i));
+            catalogoMateriales.remove(posicion);
+            materiales.remove(posicion);
+
+            DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+
+            for (int i = 0; i < catalogoMateriales.getSize(); i++) {
+                modelo.addElement((Material) catalogoMateriales.get(i));
+            }
+
+            this.cb_materiales.setModel(modelo);
+            this.cb_material.setModel(modelo);
+        } else {
+            JOptionPane.showMessageDialog(this, "No hay materiales disponibles", "ERROR", JOptionPane.ERROR_MESSAGE, null);
         }
-
-        this.cb_materiales.setModel(modelo);
-        this.cb_material.setModel(modelo);
     }//GEN-LAST:event_btn_eliminarMMouseClicked
 
     private void btn_crearEMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_crearEMouseClicked
@@ -1456,17 +1487,21 @@ public class main extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_modificarEMouseClicked
 
     private void btn_eliminarEMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_eliminarEMouseClicked
-        empleadoE = (Empleado)cb_empleados.getSelectedItem();
-        int j = empleados.find(empleadoE);
-        empleados.remove(j);
-        DefaultComboBoxModel modelo = new DefaultComboBoxModel();
-        
-        for(int i = 0; i < empleados.size; i++){
-            modelo.addElement(((Empleado)empleados.get(i)));
+        if (empleados.getSize() > 0) {
+            empleadoE = (Empleado) cb_empleados.getSelectedItem();
+            int j = empleados.find(empleadoE);
+            empleados.remove(j);
+            DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+
+            for (int i = 0; i < empleados.size; i++) {
+                modelo.addElement(((Empleado) empleados.get(i)));
+            }
+
+            this.cb_empleado.setModel(modelo);
+            this.cb_empleados.setModel(modelo);
+        } else {
+            JOptionPane.showMessageDialog(this, "No hay empleados disponibles", "ERROR", JOptionPane.ERROR_MESSAGE, null);
         }
-        
-        this.cb_empleado.setModel(modelo);
-        this.cb_empleados.setModel(modelo);
     }//GEN-LAST:event_btn_eliminarEMouseClicked
 
     private void jTabbedPane1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jTabbedPane1StateChanged
@@ -1497,27 +1532,35 @@ public class main extends javax.swing.JFrame {
         for (int i = 0; i < catalogoMateriales.getSize(); i++) {
             modelo.addElement((Material) catalogoMateriales.get(i));
         }
-
+        this.tf_nombre5.setText("");
+        this.tf_descripcion5.setText("");
+        this.tf_tiempo5.setText("");
+        DefaultComboBoxModel modelo3 = new DefaultComboBoxModel();
+        this.cb_materialesPro.setModel(modelo3);
         this.cb_producto.setModel(modelo2);
         this.cb_productos.setModel(modelo2);
         this.cb_material2.setModel(modelo);
     }//GEN-LAST:event_jTabbedPane3StateChanged
 
     private void btn_anadirMMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_anadirMMouseClicked
-      this.materialE = (Material)this.cb_material2.getSelectedItem();
-      
-      materialesProducto.push(materialE);
-      
-      modeloTabla = (DefaultTableModel)table1.getModel();
-      String[] data = new String[2];
-      data[0] = materialE.getNombre();
-      data[1] = materialE.getMarca();
-      modeloTabla.addRow(data);
-      table1.setModel(modeloTabla);
+        if (catalogoMateriales.getSize() > 0) {
+            this.materialE = (Material) this.cb_material2.getSelectedItem();
+
+            materialesProducto.push(materialE);
+
+            modeloTabla = (DefaultTableModel) table1.getModel();
+            String[] data = new String[2];
+            data[0] = materialE.getNombre();
+            data[1] = materialE.getMarca();
+            modeloTabla.addRow(data);
+            table1.setModel(modeloTabla);
+        } else {
+            JOptionPane.showMessageDialog(this, "NO hay materiales disponibles", "ERROR", JOptionPane.ERROR_MESSAGE, null);
+        }
     }//GEN-LAST:event_btn_anadirMMouseClicked
 
     private void btn_crearPMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_crearPMouseClicked
-         String nombre;
+        String nombre;
         String descripcion;
         int tiempo;
 
@@ -1561,76 +1604,93 @@ public class main extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_Mmenu3MouseClicked
 
     private void btn_seleccionarEMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_seleccionarEMouseClicked
-        empleadoE = (Empleado) cb_empleado.getSelectedItem();
+        if (empleados.getSize() > 0) {
+            empleadoE = (Empleado) cb_empleado.getSelectedItem();
 
-        tf_nombre1.setText(empleadoE.getNombre());
-        tf_id1.setText(empleadoE.getId());
-        sp_edad1.setValue(empleadoE.getEdad());
-        ta_direccion1.setText(empleadoE.getDireccion());
-        sp_salario1.setValue(empleadoE.getSalario());
+            tf_nombre1.setText(empleadoE.getNombre());
+            tf_id1.setText(empleadoE.getId());
+            sp_edad1.setValue(empleadoE.getEdad());
+            ta_direccion1.setText(empleadoE.getDireccion());
+            sp_salario1.setValue(empleadoE.getSalario());
+        } else {
+            JOptionPane.showMessageDialog(this, "No hay empleados disponibles", "ERROR", JOptionPane.ERROR_MESSAGE, null);
+        }
     }//GEN-LAST:event_btn_seleccionarEMouseClicked
 
     private void btn_eliminarPMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_eliminarPMouseClicked
-        productoE = (Producto)this.cb_productos.getSelectedItem();
-        productos.remove(productos.find(productoE));
-        DefaultComboBoxModel modelo = new DefaultComboBoxModel();
-        
-        for(int i = 0; i < productos.getSize(); i++){
-            modelo.addElement(productos.get(i));
+        if (productos.getSize() > 0) {
+            productoE = (Producto) this.cb_productos.getSelectedItem();
+            productos.remove(productos.find(productoE));
+            DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+
+            for (int i = 0; i < productos.getSize(); i++) {
+                modelo.addElement(productos.get(i));
+            }
+
+            this.cb_productos.setModel(modelo);
+        } else {
+            JOptionPane.showMessageDialog(this, "No hay productos disponibles", "ERROR", JOptionPane.ERROR_MESSAGE, null);
         }
-        
-        this.cb_productos.setModel(modelo);
     }//GEN-LAST:event_btn_eliminarPMouseClicked
 
     private void btn_seleccionarPMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_seleccionarPMouseClicked
-        productoE = (Producto) this.cb_producto.getSelectedItem();
+        if (productos.getSize() > 0) {
+            productoE = (Producto) this.cb_producto.getSelectedItem();
 
-        this.tf_nombre5.setText(productoE.getNombre());
-        this.tf_descripcion5.setText(productoE.getDescripcion());
-        this.tf_tiempo5.setText(productoE.getTiempo() + "");
+            this.tf_nombre5.setText(productoE.getNombre());
+            this.tf_descripcion5.setText(productoE.getDescripcion());
+            this.tf_tiempo5.setText(productoE.getTiempo() + "");
 
-        DefaultComboBoxModel modelo = new DefaultComboBoxModel();
-        for (int i = 0; i < productoE.getMateriales().getSize(); i++) {
-            modelo.addElement(productoE.getMateriales().get(i));
+            DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+            for (int i = 0; i < productoE.getMateriales().getSize(); i++) {
+                modelo.addElement(productoE.getMateriales().get(i));
+            }
+            this.cb_materialesPro.setModel(modelo);
+
+            DefaultComboBoxModel modelo2 = new DefaultComboBoxModel();
+            for (int i = 0; i < catalogoMateriales.getSize(); i++) {
+                modelo2.addElement(catalogoMateriales.get(i));
+            }
+            this.cb_inventarioM.setModel(modelo2);
+        } else {
+            JOptionPane.showMessageDialog(this, "No hay productos disponibles", "ERROR", JOptionPane.ERROR_MESSAGE, null);
         }
-        this.cb_materialesPro.setModel(modelo);
-
-        DefaultComboBoxModel modelo2 = new DefaultComboBoxModel();
-        for (int i = 0; i < catalogoMateriales.getSize(); i++) {
-            modelo2.addElement(catalogoMateriales.get(i));
-        }
-        this.cb_inventarioM.setModel(modelo2);
     }//GEN-LAST:event_btn_seleccionarPMouseClicked
 
     private void btn_deleteMatPMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_deleteMatPMouseClicked
-        materialE = (Material)this.cb_materialesPro.getSelectedItem();
-        productoE.getMateriales().remove(productoE.getMateriales().find(materialE));
-        
-        DefaultComboBoxModel modelo = new DefaultComboBoxModel();
-        for(int i = 0; i < productoE.getMateriales().getSize(); i++){
-            modelo.addElement(productoE.getMateriales().get(i));
+        if (productoE.getMateriales().getSize() > 0) {
+            materialE = (Material) this.cb_materialesPro.getSelectedItem();
+            productoE.getMateriales().remove(productoE.getMateriales().find(materialE));
+
+            DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+            for (int i = 0; i < productoE.getMateriales().getSize(); i++) {
+                modelo.addElement(productoE.getMateriales().get(i));
+            }
+            this.cb_materialesPro.setModel(modelo);
+        } else {
+            JOptionPane.showMessageDialog(this, "No hay materiales disponibles", "ERROR", JOptionPane.ERROR_MESSAGE, null);
         }
-        this.cb_materialesPro.setModel(modelo);
-        this.cb_materialesPro.setSelectedIndex(0);
     }//GEN-LAST:event_btn_deleteMatPMouseClicked
 
     private void btn_addMatProMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_addMatProMouseClicked
-        materialE = (Material)this.cb_inventarioM.getSelectedItem();
-        productoE.getMateriales().push(materialE);
-        
-        DefaultComboBoxModel modelo = new DefaultComboBoxModel();
-        for(int i = 0; i < productoE.getMateriales().getSize(); i++){
-            modelo.addElement(productoE.getMateriales().get(i));
+        if (catalogoMateriales.getSize() > 0) {
+            materialE = (Material) this.cb_inventarioM.getSelectedItem();
+            productoE.getMateriales().push(materialE);
+
+            DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+            for (int i = 0; i < productoE.getMateriales().getSize(); i++) {
+                modelo.addElement(productoE.getMateriales().get(i));
+            }
+            this.cb_materialesPro.setModel(modelo);
+        } else {
+            JOptionPane.showMessageDialog(this, "No hay materiales disponibles", "ERROR", JOptionPane.ERROR_MESSAGE, null);
         }
-        this.cb_materialesPro.setModel(modelo);
-        this.cb_inventarioM.setSelectedIndex(0);
     }//GEN-LAST:event_btn_addMatProMouseClicked
 
     private void btn_modificarPMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_modificarPMouseClicked
         productoE.setNombre(this.tf_nombre5.getText());
         productoE.setDescripcion(this.tf_descripcion5.getText());
         productoE.setTiempo(Integer.parseInt(this.tf_tiempo5.getText()));
-        this.cb_producto.setSelectedIndex(0);
         this.tf_nombre5.setText("");
         this.tf_descripcion5.setText("");
         this.tf_tiempo5.setText("");
@@ -1685,51 +1745,69 @@ public class main extends javax.swing.JFrame {
     }//GEN-LAST:event_jd_materialWindowClosed
 
     private void btn_ordenarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_ordenarMouseClicked
-        if (colaEmpleados.isEmpty() == false) {
-            productoE = (Producto) this.cb_productosE.getSelectedItem();
-            empleadoE = ((Empleado) colaEmpleados.DeQueue());
+        if (productos.getSize() > 0) {
+            if (colaEmpleados.isEmpty() == false) {
+                productoE = (Producto) this.cb_productosE.getSelectedItem();
+                empleadoE = ((Empleado) colaEmpleados.DeQueue());
 
-            String[] fila = new String[3];
-            fila[0] = empleadoE.getNombre();
-            fila[1] = productoE.getNombre();
-            fila[2] = "";
+                String[] fila = new String[3];
+                fila[0] = empleadoE.getNombre();
+                fila[1] = productoE.getNombre();
+                fila[2] = "En espera";
 
-            modeloTabla = (DefaultTableModel) this.table3.getModel();
-            modeloTabla.addRow(fila);
-            table3.setModel(modeloTabla);
-            Ordenes.push(new Orden("Orden" , empleadoE, productoE, colaEmpleados, materiales,table3,0));
-            contador++;
-        }else{
-            JOptionPane.showMessageDialog(this, "NO hay empleados disponibles por el momento", 
-                    "ERROR", JOptionPane.ERROR_MESSAGE, null);
+                modeloTabla = (DefaultTableModel) this.table3.getModel();
+                modeloTabla.addRow(fila);
+                table3.setModel(modeloTabla);
+                Ordenes.push(new Orden("Orden", empleadoE, productoE, colaEmpleados, materiales, table3, catalogoMateriales));
+                contador++;
+            } else {
+                JOptionPane.showMessageDialog(this, "No hay empleados disponibles por el momento",
+                        "ERROR", JOptionPane.ERROR_MESSAGE, null);
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "No hay productos disponibles", "ERROR", JOptionPane.ERROR_MESSAGE, null);
         }
     }//GEN-LAST:event_btn_ordenarMouseClicked
 
     private void btn_producirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_producirMouseClicked
-        modeloTabla = (DefaultTableModel)table3.getModel();
-        
-        while(modeloTabla.getRowCount()>0){
-            modeloTabla.removeRow(modeloTabla.getRowCount() -1);
+        modeloTabla = (DefaultTableModel) table3.getModel();
+
+        while (modeloTabla.getRowCount() > 0) {
+            modeloTabla.removeRow(modeloTabla.getRowCount() - 1);
         }
         table3.setModel(modeloTabla);
-        
+
         for (int i = 0; i < Ordenes.getSize(); i++) {
-            ((Orden)Ordenes.get(i)).start();
+            ((Orden) Ordenes.get(i)).start();
         }
         Ordenes = new Lista();
-        
-        modeloTabla = (DefaultTableModel)table3.getModel();
-        while(modeloTabla.getRowCount()>0){
-            modeloTabla.removeRow(modeloTabla.getRowCount() -1);
+
+        modeloTabla = (DefaultTableModel) table3.getModel();
+        while (modeloTabla.getRowCount() > 0) {
+            modeloTabla.removeRow(modeloTabla.getRowCount() - 1);
         }
-        contador = 0;
+        table3.setModel(modeloTabla);
+
     }//GEN-LAST:event_btn_producirMouseClicked
 
+    private void btn_MmenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_MmenuMouseClicked
+        this.jd_ensamblaje.setVisible(false);
+        this.pack();
+        Ordenes = new Lista();
+        while (colaEmpleados.isEmpty() == false) {
+            colaEmpleados.DeQueue();
+        }
+        modeloTabla = (DefaultTableModel) table3.getModel();
+        while (modeloTabla.getRowCount() > 0) {
+            modeloTabla.removeRow(modeloTabla.getRowCount() - 1);
+        }
+        table3.setModel(modeloTabla);
+        this.setVisible(true);
+    }//GEN-LAST:event_btn_MmenuMouseClicked
 
     /**
      * @param args the command line arguments
      */
-
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -1763,6 +1841,7 @@ public class main extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_Mmenu;
     private javax.swing.JButton btn_Mmenu1;
     private javax.swing.JButton btn_Mmenu2;
     private javax.swing.JButton btn_Mmenu3;
@@ -1901,14 +1980,5 @@ public class main extends javax.swing.JFrame {
     Cola colaEmpleados = new Cola();
     Lista Ordenes = new Lista();
     int contador = 0;
-    
 
-    /*
-     Observaciones:
-        -Deberiamos de cambiar el atributo tiempo como date con el formato de hrs mins segs
-        -Hice la lista de materiales de productos con un text area pero necesito un j list para que se almacenen como objetos? podria ir almacenando en los materiales internamente pero no sabria como datarlo despues
-        -Falta hacer las listas de cada uno, por eso todavia no se como recorrer los fors de cada combo box (Productos, Materiales, Empleados)
-        -Quedan pendientes los metodos de eliminar, modificar, y crear. Igual todavia no se puede porque no estan las listas
-        -Todavia falta el panel de ensamblaje
-     */
 }

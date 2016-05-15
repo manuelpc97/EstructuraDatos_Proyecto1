@@ -16,7 +16,7 @@ import javax.swing.JLabel;
 public class TiempoMateriales implements Runnable {
  
     private JLabel hora;
-    String tiempo;//el tiempo de la clase
+    String tiempo;
     Lista timeUp;
     
     public TiempoMateriales(JLabel hora){
@@ -26,7 +26,7 @@ public class TiempoMateriales implements Runnable {
     }
     
     public void inicioProceso (String duracion) throws ParseException{
-       //Este metodo se llama solamente cuando inicia el proceso, no en cola. Porque suma a la hora en la que termina el proceso mal
+       
         String[] arr = duracion.split(";");
         int horas = Integer.parseInt(arr[0]);
         int minutos = Integer.parseInt(arr[1]);
@@ -50,7 +50,6 @@ public class TiempoMateriales implements Runnable {
             tiempo  = hora.getText();
             for (int i = 0; i < timeUp.getSize(); i++) {
                 if(((String)timeUp.get(i)).equals(tiempo)){
-                    //llamar proceso de actualizar la tabla
                     timeUp.remove(timeUp.find(i));
                 }
                     
