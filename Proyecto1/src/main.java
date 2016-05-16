@@ -140,14 +140,15 @@ public class main extends javax.swing.JFrame {
         jLabel34 = new javax.swing.JLabel();
         btn_Mmenu1 = new javax.swing.JButton();
         jd_ensamblaje = new javax.swing.JDialog();
+        jl_hora = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         cb_productosE = new javax.swing.JComboBox();
         btn_ordenar = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         table3 = new javax.swing.JTable();
-        jl_hora = new javax.swing.JLabel();
         btn_producir = new javax.swing.JButton();
         btn_Mmenu = new javax.swing.JButton();
+        jLabel33 = new javax.swing.JLabel();
         jLabel31 = new javax.swing.JLabel();
         btn_ensamblaje = new javax.swing.JButton();
         btn_administracion = new javax.swing.JButton();
@@ -164,29 +165,35 @@ public class main extends javax.swing.JFrame {
         });
         jd_administracion.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        btn_empleado.setBackground(new java.awt.Color(204, 204, 0));
+        btn_empleado.setFont(new java.awt.Font("Script MT Bold", 0, 24)); // NOI18N
         btn_empleado.setText("Empleado");
         btn_empleado.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btn_empleadoMouseClicked(evt);
             }
         });
-        jd_administracion.getContentPane().add(btn_empleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 70, 244, 74));
+        jd_administracion.getContentPane().add(btn_empleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 70, 240, 70));
 
+        btn_material.setBackground(new java.awt.Color(204, 204, 0));
+        btn_material.setFont(new java.awt.Font("Script MT Bold", 0, 24)); // NOI18N
         btn_material.setText("Material");
         btn_material.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btn_materialMouseClicked(evt);
             }
         });
-        jd_administracion.getContentPane().add(btn_material, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 190, 240, 70));
+        jd_administracion.getContentPane().add(btn_material, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 190, 240, 70));
 
+        btn_producto.setBackground(new java.awt.Color(204, 204, 0));
+        btn_producto.setFont(new java.awt.Font("Script MT Bold", 0, 24)); // NOI18N
         btn_producto.setText("Producto");
         btn_producto.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btn_productoMouseClicked(evt);
             }
         });
-        jd_administracion.getContentPane().add(btn_producto, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 310, 244, 70));
+        jd_administracion.getContentPane().add(btn_producto, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 310, 240, 70));
 
         jl_opciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imgs/image.php.jpeg"))); // NOI18N
         jl_opciones.setFocusable(false);
@@ -1073,20 +1080,28 @@ public class main extends javax.swing.JFrame {
 
         jd_ensamblaje.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel19.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
-        jLabel19.setForeground(new java.awt.Color(183, 56, 56));
+        jl_hora.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jl_hora.setForeground(new java.awt.Color(255, 255, 255));
+        jd_ensamblaje.getContentPane().add(jl_hora, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 10, 130, 37));
+
+        jLabel19.setFont(new java.awt.Font("Copperplate Gothic Light", 1, 55)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(255, 255, 255));
         jLabel19.setText("Ensamblaje");
-        jd_ensamblaje.getContentPane().add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 20, 210, 50));
+        jd_ensamblaje.getContentPane().add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 30, 390, 50));
 
-        jd_ensamblaje.getContentPane().add(cb_productosE, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 177, -1));
+        cb_productosE.setFont(new java.awt.Font("Segoe UI Symbol", 0, 18)); // NOI18N
+        jd_ensamblaje.getContentPane().add(cb_productosE, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, 250, 30));
 
+        btn_ordenar.setBackground(new java.awt.Color(0, 153, 153));
+        btn_ordenar.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        btn_ordenar.setForeground(new java.awt.Color(255, 255, 255));
         btn_ordenar.setText("Ordenar");
         btn_ordenar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btn_ordenarMouseClicked(evt);
             }
         });
-        jd_ensamblaje.getContentPane().add(btn_ordenar, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 100, -1, -1));
+        jd_ensamblaje.getContentPane().add(btn_ordenar, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 280, 140, -1));
 
         table3.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -1098,36 +1113,47 @@ public class main extends javax.swing.JFrame {
         ));
         jScrollPane3.setViewportView(table3);
 
-        jd_ensamblaje.getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 90, -1, 302));
-        jd_ensamblaje.getContentPane().add(jl_hora, new org.netbeans.lib.awtextra.AbsoluteConstraints(668, 20, 92, 37));
+        jd_ensamblaje.getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 130, -1, 302));
 
+        btn_producir.setBackground(new java.awt.Color(0, 153, 153));
+        btn_producir.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        btn_producir.setForeground(new java.awt.Color(255, 255, 255));
         btn_producir.setText("Producir");
         btn_producir.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btn_producirMouseClicked(evt);
             }
         });
-        jd_ensamblaje.getContentPane().add(btn_producir, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 430, 110, -1));
+        jd_ensamblaje.getContentPane().add(btn_producir, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 490, 140, -1));
 
+        btn_Mmenu.setBackground(new java.awt.Color(102, 0, 102));
+        btn_Mmenu.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        btn_Mmenu.setForeground(new java.awt.Color(255, 255, 255));
         btn_Mmenu.setText("Main Menu");
         btn_Mmenu.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btn_MmenuMouseClicked(evt);
             }
         });
-        jd_ensamblaje.getContentPane().add(btn_Mmenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 430, -1, -1));
+        jd_ensamblaje.getContentPane().add(btn_Mmenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 120, 40));
+
+        jLabel33.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imgs/gray-rectangle-hi.png"))); // NOI18N
+        jd_ensamblaje.getContentPane().add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 90, 570, 410));
 
         jLabel31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imgs/gears-nuts-3227495.jpg"))); // NOI18N
-        jd_ensamblaje.getContentPane().add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 830, 490));
+        jd_ensamblaje.getContentPane().add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 940, 560));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("ProyectoEstructuras");
-        setMinimumSize(new java.awt.Dimension(690, 490));
+        setMaximumSize(new java.awt.Dimension(809, 566));
+        setMinimumSize(new java.awt.Dimension(809, 566));
+        setPreferredSize(new java.awt.Dimension(809, 566));
         setResizable(false);
+        setSize(new java.awt.Dimension(809, 566));
         getContentPane().setLayout(null);
 
         btn_ensamblaje.setBackground(new java.awt.Color(153, 0, 0));
-        btn_ensamblaje.setFont(new java.awt.Font("Gloucester MT Extra Condensed", 0, 48)); // NOI18N
+        btn_ensamblaje.setFont(new java.awt.Font("Gloucester MT Extra Condensed", 0, 36)); // NOI18N
         btn_ensamblaje.setForeground(new java.awt.Color(255, 255, 255));
         btn_ensamblaje.setText("Ensamblaje");
         btn_ensamblaje.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1136,10 +1162,10 @@ public class main extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btn_ensamblaje);
-        btn_ensamblaje.setBounds(160, 300, 400, 110);
+        btn_ensamblaje.setBounds(230, 340, 360, 90);
 
         btn_administracion.setBackground(new java.awt.Color(153, 0, 0));
-        btn_administracion.setFont(new java.awt.Font("Gloucester MT Extra Condensed", 0, 48)); // NOI18N
+        btn_administracion.setFont(new java.awt.Font("Gloucester MT Extra Condensed", 0, 36)); // NOI18N
         btn_administracion.setForeground(new java.awt.Color(255, 255, 255));
         btn_administracion.setText("Administración");
         btn_administracion.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1148,13 +1174,16 @@ public class main extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btn_administracion);
-        btn_administracion.setBounds(160, 160, 400, 110);
+        btn_administracion.setBounds(230, 200, 360, 90);
 
-        jLabel32.setFont(new java.awt.Font("Gloucester MT Extra Condensed", 0, 24)); // NOI18N
+        jLabel32.setFont(new java.awt.Font("Gloucester MT Extra Condensed", 0, 36)); // NOI18N
         jLabel32.setForeground(new java.awt.Color(255, 255, 255));
         jLabel32.setText("T  R  U  M  P      I  N  D  U  S  T  R  I  E  S");
+        jLabel32.setMaximumSize(new java.awt.Dimension(809, 566));
+        jLabel32.setMinimumSize(new java.awt.Dimension(809, 566));
+        jLabel32.setPreferredSize(new java.awt.Dimension(809, 566));
         getContentPane().add(jLabel32);
-        jLabel32.setBounds(120, 50, 500, 80);
+        jLabel32.setBounds(210, 50, 410, 80);
 
         jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imgs/525848.jpg"))); // NOI18N
         getContentPane().add(jLabel20);
@@ -1848,6 +1877,7 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;

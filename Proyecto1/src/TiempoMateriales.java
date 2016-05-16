@@ -25,18 +25,12 @@ public class TiempoMateriales implements Runnable {
             timeUp = new Lista();
     }
     
-    public void inicioProceso (String duracion) throws ParseException{
-       
-        String[] arr = duracion.split(";");
-        int horas = Integer.parseInt(arr[0]);
-        int minutos = Integer.parseInt(arr[1]);
-        
+    public void inicioProceso (int duracion) throws ParseException{
         SimpleDateFormat df = new SimpleDateFormat("hh:mm:ss");
         Date d = df.parse(hora.getText()); 
         Calendar gc = new GregorianCalendar();
         gc.setTime(d);
-        gc.add(Calendar.MINUTE, horas);
-        gc.add(Calendar.HOUR, horas);
+        gc.add(Calendar.SECOND, duracion);
         Date d2 = gc.getTime();
         timeUp.push(df.format(d2));
     }
