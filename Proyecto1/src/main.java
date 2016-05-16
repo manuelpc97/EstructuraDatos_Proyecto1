@@ -1,5 +1,6 @@
 
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -147,17 +148,21 @@ public class main extends javax.swing.JFrame {
         jl_hora = new javax.swing.JLabel();
         btn_producir = new javax.swing.JButton();
         btn_Mmenu = new javax.swing.JButton();
+        jLabel31 = new javax.swing.JLabel();
         btn_ensamblaje = new javax.swing.JButton();
         btn_administracion = new javax.swing.JButton();
         jLabel32 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
 
+        jd_administracion.setIconImage(new ImageIcon(getClass().getResource("/Imgs/Red-Background-27.png")).getImage());
+        jd_administracion.setResizable(false);
         jd_administracion.addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosed(java.awt.event.WindowEvent evt) {
                 jd_administracionWindowClosed(evt);
             }
         });
+        jd_administracion.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btn_empleado.setText("Empleado");
         btn_empleado.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -165,6 +170,7 @@ public class main extends javax.swing.JFrame {
                 btn_empleadoMouseClicked(evt);
             }
         });
+        jd_administracion.getContentPane().add(btn_empleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 70, 244, 74));
 
         btn_material.setText("Material");
         btn_material.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -172,6 +178,7 @@ public class main extends javax.swing.JFrame {
                 btn_materialMouseClicked(evt);
             }
         });
+        jd_administracion.getContentPane().add(btn_material, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 190, 240, 70));
 
         btn_producto.setText("Producto");
         btn_producto.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -179,39 +186,11 @@ public class main extends javax.swing.JFrame {
                 btn_productoMouseClicked(evt);
             }
         });
+        jd_administracion.getContentPane().add(btn_producto, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 310, 244, 70));
 
-        jl_opciones.setText("Elementos a Gestionar");
-
-        javax.swing.GroupLayout jd_administracionLayout = new javax.swing.GroupLayout(jd_administracion.getContentPane());
-        jd_administracion.getContentPane().setLayout(jd_administracionLayout);
-        jd_administracionLayout.setHorizontalGroup(
-            jd_administracionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jd_administracionLayout.createSequentialGroup()
-                .addGroup(jd_administracionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jd_administracionLayout.createSequentialGroup()
-                        .addGap(221, 221, 221)
-                        .addComponent(jl_opciones, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jd_administracionLayout.createSequentialGroup()
-                        .addGap(177, 177, 177)
-                        .addGroup(jd_administracionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btn_empleado, javax.swing.GroupLayout.DEFAULT_SIZE, 244, Short.MAX_VALUE)
-                            .addComponent(btn_material, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btn_producto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(216, Short.MAX_VALUE))
-        );
-        jd_administracionLayout.setVerticalGroup(
-            jd_administracionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jd_administracionLayout.createSequentialGroup()
-                .addGap(36, 36, 36)
-                .addComponent(jl_opciones)
-                .addGap(53, 53, 53)
-                .addComponent(btn_empleado, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(52, 52, 52)
-                .addComponent(btn_material, javax.swing.GroupLayout.DEFAULT_SIZE, 74, Short.MAX_VALUE)
-                .addGap(42, 42, 42)
-                .addComponent(btn_producto, javax.swing.GroupLayout.DEFAULT_SIZE, 74, Short.MAX_VALUE)
-                .addGap(82, 82, 82))
-        );
+        jl_opciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imgs/image.php.jpeg"))); // NOI18N
+        jl_opciones.setFocusable(false);
+        jd_administracion.getContentPane().add(jl_opciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 620, 470));
 
         jd_empleado.addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosed(java.awt.event.WindowEvent evt) {
@@ -1092,7 +1071,14 @@ public class main extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jd_ensamblaje.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel19.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(183, 56, 56));
         jLabel19.setText("Ensamblaje");
+        jd_ensamblaje.getContentPane().add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 20, 210, 50));
+
+        jd_ensamblaje.getContentPane().add(cb_productosE, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 177, -1));
 
         btn_ordenar.setText("Ordenar");
         btn_ordenar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1100,6 +1086,7 @@ public class main extends javax.swing.JFrame {
                 btn_ordenarMouseClicked(evt);
             }
         });
+        jd_ensamblaje.getContentPane().add(btn_ordenar, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 100, -1, -1));
 
         table3.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -1111,12 +1098,16 @@ public class main extends javax.swing.JFrame {
         ));
         jScrollPane3.setViewportView(table3);
 
+        jd_ensamblaje.getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 90, -1, 302));
+        jd_ensamblaje.getContentPane().add(jl_hora, new org.netbeans.lib.awtextra.AbsoluteConstraints(668, 20, 92, 37));
+
         btn_producir.setText("Producir");
         btn_producir.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btn_producirMouseClicked(evt);
             }
         });
+        jd_ensamblaje.getContentPane().add(btn_producir, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 430, 110, -1));
 
         btn_Mmenu.setText("Main Menu");
         btn_Mmenu.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1124,55 +1115,10 @@ public class main extends javax.swing.JFrame {
                 btn_MmenuMouseClicked(evt);
             }
         });
+        jd_ensamblaje.getContentPane().add(btn_Mmenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 430, -1, -1));
 
-        javax.swing.GroupLayout jd_ensamblajeLayout = new javax.swing.GroupLayout(jd_ensamblaje.getContentPane());
-        jd_ensamblaje.getContentPane().setLayout(jd_ensamblajeLayout);
-        jd_ensamblajeLayout.setHorizontalGroup(
-            jd_ensamblajeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jd_ensamblajeLayout.createSequentialGroup()
-                .addGap(42, 42, 42)
-                .addComponent(cb_productosE, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
-                .addComponent(btn_ordenar)
-                .addGap(39, 39, 39)
-                .addGroup(jd_ensamblajeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jd_ensamblajeLayout.createSequentialGroup()
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(28, Short.MAX_VALUE))
-                    .addGroup(jd_ensamblajeLayout.createSequentialGroup()
-                        .addComponent(jLabel19)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jl_hora, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(81, 81, 81))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_ensamblajeLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btn_Mmenu)
-                .addGap(130, 130, 130)
-                .addComponent(btn_producir)
-                .addGap(278, 278, 278))
-        );
-        jd_ensamblajeLayout.setVerticalGroup(
-            jd_ensamblajeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jd_ensamblajeLayout.createSequentialGroup()
-                .addGroup(jd_ensamblajeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jd_ensamblajeLayout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(jl_hora, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jd_ensamblajeLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel19)))
-                .addGap(18, 18, 18)
-                .addGroup(jd_ensamblajeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jd_ensamblajeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(cb_productosE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btn_ordenar))
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30)
-                .addGroup(jd_ensamblajeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_producir)
-                    .addComponent(btn_Mmenu))
-                .addContainerGap(78, Short.MAX_VALUE))
-        );
+        jLabel31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imgs/gears-nuts-3227495.jpg"))); // NOI18N
+        jd_ensamblaje.getContentPane().add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 830, 490));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("ProyectoEstructuras");
@@ -1217,55 +1163,6 @@ public class main extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btn_empleadoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_empleadoMouseClicked
-        this.jd_administracion.setVisible(false);
-        jd_empleado.setModal(true);
-        jd_empleado.pack();
-        jd_empleado.setLocationRelativeTo(this);
-        jd_empleado.setVisible(true);
-        DefaultComboBoxModel modelo = new DefaultComboBoxModel();
-        cb_empleado.setModel(modelo);
-        cb_empleados.setModel(modelo);
-    }//GEN-LAST:event_btn_empleadoMouseClicked
-
-    private void btn_materialMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_materialMouseClicked
-        this.jd_administracion.setVisible(false);
-
-        for (int i = 0; i < materiales.getSize(); i++) {
-            if (((Pila) materiales.get(i)).isEmpty()) {
-                materiales.remove(i);
-                catalogoMateriales.remove(i);
-            }
-        }
-
-        DefaultComboBoxModel modelo = new DefaultComboBoxModel();
-        for (int i = 0; i < catalogoMateriales.getSize(); i++) {
-            modelo.addElement(catalogoMateriales.get(i));
-        }
-        cb_material.setModel(modelo);
-        cb_materiales.setModel(modelo);
-
-        jd_material.setModal(true);
-        jd_material.pack();
-        jd_material.setLocationRelativeTo(this);
-        jd_material.setVisible(true);
-
-    }//GEN-LAST:event_btn_materialMouseClicked
-
-    private void btn_productoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_productoMouseClicked
-        this.jd_administracion.setVisible(false);
-        jd_producto.setModal(true);
-        jd_producto.pack();
-        DefaultComboBoxModel modelo = new DefaultComboBoxModel();
-
-        for (int i = 0; i < catalogoMateriales.getSize(); i++) {
-            modelo.addElement((Material) catalogoMateriales.get(i));
-        }
-        this.cb_material2.setModel(modelo);
-        jd_producto.setLocationRelativeTo(this);
-        jd_producto.setVisible(true);
-    }//GEN-LAST:event_btn_productoMouseClicked
 
 
     private void btn_crearEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_crearEActionPerformed
@@ -1805,6 +1702,54 @@ public class main extends javax.swing.JFrame {
         this.setVisible(true);
     }//GEN-LAST:event_btn_MmenuMouseClicked
 
+    private void btn_productoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_productoMouseClicked
+        this.jd_administracion.setVisible(false);
+        jd_producto.setModal(true);
+        jd_producto.pack();
+        DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+
+        for (int i = 0; i < catalogoMateriales.getSize(); i++) {
+            modelo.addElement((Material) catalogoMateriales.get(i));
+        }
+        this.cb_material2.setModel(modelo);
+        jd_producto.setLocationRelativeTo(this);
+        jd_producto.setVisible(true);
+    }//GEN-LAST:event_btn_productoMouseClicked
+
+    private void btn_materialMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_materialMouseClicked
+        this.jd_administracion.setVisible(false);
+
+        for (int i = 0; i < materiales.getSize(); i++) {
+            if (((Pila) materiales.get(i)).isEmpty()) {
+                materiales.remove(i);
+                catalogoMateriales.remove(i);
+            }
+        }
+
+        DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+        for (int i = 0; i < catalogoMateriales.getSize(); i++) {
+            modelo.addElement(catalogoMateriales.get(i));
+        }
+        cb_material.setModel(modelo);
+        cb_materiales.setModel(modelo);
+
+        jd_material.setModal(true);
+        jd_material.pack();
+        jd_material.setLocationRelativeTo(this);
+        jd_material.setVisible(true);
+    }//GEN-LAST:event_btn_materialMouseClicked
+
+    private void btn_empleadoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_empleadoMouseClicked
+        this.jd_administracion.setVisible(false);
+        jd_empleado.setModal(true);
+        jd_empleado.pack();
+        jd_empleado.setLocationRelativeTo(this);
+        jd_empleado.setVisible(true);
+        DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+        cb_empleado.setModel(modelo);
+        cb_empleados.setModel(modelo);
+    }//GEN-LAST:event_btn_empleadoMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -1901,6 +1846,7 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
